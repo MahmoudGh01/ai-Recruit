@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static String uri = 'https://airecruit2.onrender.com';
+  static String uri = 'http://127.0.0.1:10000';
 }

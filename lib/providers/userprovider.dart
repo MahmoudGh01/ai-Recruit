@@ -3,7 +3,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserProvider extends ChangeNotifier {
-  User _user = User(id: '', name: '', email: '', token: '', password: '', profilePicturePath: '');
+  User _user = User(
+    id: '',
+    name: '',
+    lastname: '',
+    email: '',
+    token: '',
+    password: '',
+    profilePicturePath: '',
+    birthdate: '',
+    title: '',
+    role: 'user', // Assuming 'user' as default role
+  );
 
   User get user => _user;
 

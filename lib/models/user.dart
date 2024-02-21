@@ -1,13 +1,16 @@
 import 'dart:convert';
 
 class User {
-  final String id;
-  final String name;
+  String id;
+  String name;
   String email;
-  final String token;
-  final String password;
-  final String profilePicturePath;
-
+  String token;
+  String password;
+  String profilePicturePath;
+  String lastname;
+  String title;
+  String birthdate;
+  String role;
 
   User({
     required this.id,
@@ -16,40 +19,41 @@ class User {
     required this.token,
     required this.password,
     required this.profilePicturePath,
+    required this.lastname,
+    required this.title,
+    required this.birthdate,
+    required this.role,
   });
 
-
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['user']['_id'] as String,
+      email: json['user']['email'] as String,
+      password: json['user']['password'] as String,
+      name: json['user']['name'] as String,
+      lastname: json['user']['lastname'] as String,
+      title: json['user']['title'] as String,
+      birthdate: json['user']['birthdate'] as String,
+      role: json['user']['role'] as String,
+      profilePicturePath: json['user']['profile_picture'] as String,
+      token: json['token'] ?? '' ,
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return {
+      '_id': id,
       'name': name,
       'email': email,
       'token': token,
       'password': password,
+      'profile_picture': profilePicturePath,
+      'lastname': lastname,
+      'title': title,
+      'birthdate': birthdate,
+      'role': role,
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
-    return User(
-      id: map['_id'] ?? '',
-      name: map['name'] ?? '',
-      email: map['email'] ?? '',
-      token: map['token'] ?? '',
-      password: map['password'] ?? '',
-      profilePicturePath: map['file'] ?? '',
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
-      id: json['_id'] ?? '',
-      name: json['user']['name'] ?? '',
-      email: json['user']['email'] ?? '',
-      token: json['token'] ?? '',
-      password: json['user']['password'] ?? '',
-      profilePicturePath: json['user']['file'] ?? '',
-    );
-  }
 }

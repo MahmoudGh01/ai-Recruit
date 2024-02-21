@@ -31,6 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
       });
     }
   }
+
   void signupUser() {
     if (_image != null) {
       authService.signUpUser(
@@ -38,12 +39,13 @@ class _SignupScreenState extends State<SignupScreen> {
         email: emailController.text,
         password: passwordController.text,
         name: nameController.text,
-        imageFile: _image!,  // Pass the selected image file
+        imageFile: _image!, // Pass the selected image file
       );
     } else {
       // Handle the case when an image is not selected
       // For example, show a snackbar message
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please select an image.')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Please select an image.')));
     }
   }
 
@@ -59,17 +61,25 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(height: 60),
               Text(
                 'Join AiRecruit Today',
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: GlobalColors.primaryColor), // Use global color
+                style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.primaryColor), // Use global color
               ),
               SizedBox(height: 8),
               Text(
                 'Unlock Your Productivity Potential!',
-                style: TextStyle(fontSize: 18, color: GlobalColors.secondaryColor), // Use global color
+                style: TextStyle(
+                    fontSize: 18,
+                    color: GlobalColors.secondaryColor), // Use global color
               ),
               SizedBox(height: 48),
               Text(
                 'Fullname',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: GlobalColors.primaryColor),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.primaryColor),
               ),
               SizedBox(height: 8),
               CustomTextField(
@@ -79,7 +89,10 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(height: 24),
               Text(
                 'Email',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: GlobalColors.primaryColor),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.primaryColor),
               ),
               SizedBox(height: 8),
               CustomTextField(
@@ -89,7 +102,10 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(height: 24),
               Text(
                 'Password',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: GlobalColors.primaryColor),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.primaryColor),
               ),
               SizedBox(height: 8),
               CustomTextField(
@@ -103,14 +119,15 @@ class _SignupScreenState extends State<SignupScreen> {
                   onTap: _pickImage,
                   child: _image != null
                       ? CircleAvatar(
-                    radius: 60,
-                    backgroundImage: FileImage(_image!),
-                  )
+                          radius: 60,
+                          backgroundImage: FileImage(_image!),
+                        )
                       : CircleAvatar(
-                    radius: 60,
-                    backgroundColor: Colors.grey.shade200,
-                    child: Icon(Icons.camera_alt, color: Colors.grey.shade800),
-                  ),
+                          radius: 60,
+                          backgroundColor: Colors.grey.shade200,
+                          child: Icon(Icons.camera_alt,
+                              color: Colors.grey.shade800),
+                        ),
                 ),
               ),
               SizedBox(height: 24),
@@ -118,8 +135,10 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: ElevatedButton(
                   onPressed: signupUser,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(GlobalColors.buttonColor), // Use global color
-                    minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)), // Full width button
+                    backgroundColor: MaterialStateProperty.all(
+                        GlobalColors.buttonColor), // Use global color
+                    minimumSize: MaterialStateProperty.all(
+                        Size(double.infinity, 50)), // Full width button
                   ),
                   child: Text("Sign up"),
                 ),
@@ -132,9 +151,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     Text("Already have an account? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
                       },
-                      child: Text("Sign In", style: TextStyle(color: GlobalColors.linkColor)), // Corrected action text and use global color
+                      child: Text("Sign In",
+                          style: TextStyle(
+                              color: GlobalColors
+                                  .linkColor)), // Corrected action text and use global color
                     ),
                   ],
                 ),

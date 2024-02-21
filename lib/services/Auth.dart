@@ -16,7 +16,6 @@ import '../utils/constants.dart';
 import '../utils/utils.dart';
 
 class AuthService {
-
   void signUpUser({
     required BuildContext context,
     required String email,
@@ -30,21 +29,23 @@ class AuthService {
         ..fields['email'] = email
         ..fields['name'] = name
         ..fields['password'] = password
-
         ..files.add(await http.MultipartFile.fromPath(
           'file',
           imageFile.path,
-          contentType: MediaType('file', basename(imageFile.path).split('.').last),
+          contentType:
+              MediaType('file', basename(imageFile.path).split('.').last),
         ));
 
       http.StreamedResponse res = await request.send();
 
       if (res.statusCode == 201) {
         // Handle success
-        showSnackBar(context, 'Account created login with the same credentials');
+        showSnackBar(
+            context, 'Account created login with the same credentials');
       } else {
         // Handle error
-        showSnackBar(context, 'Failed to create account');
+        showSnackBar(
+            context, 'Failed to create account' + res.statusCode.toString());
       }
     } catch (e) {
       showSnackBar(context, e.toString());
@@ -161,8 +162,8 @@ class AuthService {
 
   Future<int> verifyCode(
       {required BuildContext context,
-        required String code,
-        required String email}) async {
+      required String code,
+      required String email}) async {
     try {
       // Get the email from the UserProvider
       var userProvider = Provider.of<UserProvider>(context, listen: false);
@@ -226,13 +227,12 @@ class AuthService {
       showSnackBar(context, e.toString());
     }
   }
+
   void setPassword(
       {required BuildContext context,
-        required String newPassword,
-        required String email}) async {
+      required String newPassword,
+      required String email}) async {
     try {
-
-
       http.Response res = await http.post(
         Uri.parse('${Constants.uri}/set-password'),
         body: jsonEncode({'email': email, 'password': newPassword}),
@@ -253,44 +253,47 @@ class AuthService {
     }
   }
 
-  Future<void> sendGoogleSignInDataToBackend(String code, BuildContext context) async {
+  Future<void> sendGoogleSignInDataToBackend(
+      String code, BuildContext context) async {
     final Uri uri = Uri.parse('${Constants.uri}/google-sign-in');
+    var userProvider = Provider.of<UserProvider>(context, listen: false);
 
-    try {
-      final response = await http.post(
-        uri,
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({'code': code}),
-      );
+    final response = await http.post(
+      uri,
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode({'code': code}),
+    );
 
-      if (response.statusCode == 200) {
-        print('Google Sign-In data sent to /home endpoint successfully');
-        final responseBody = json.decode(response.body);
+    if (response.statusCode == 200) {
+      print('Google Sign-In data sent to backend endpoint successfully');
+      final responseBody = json.decode(response.body);
 
-        // Assuming 'user_id' is an object and you need the '_id' field from it
-        if (responseBody['user_id'] != null && responseBody['user_id'] is Map<String, dynamic>) {
-          final userId = responseBody['user_id']['email']; // Extract the '_id' as the userId
-         print("Extracted userId: $userId");
+      // Directly use the decoded JSON if it matches your expected structure
+      if (responseBody != null && responseBody is Map<String, dynamic>) {
+        print(responseBody);
 
-          // Navigate to SetPasswordScreen with userId
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => SetPasswordScreen(userId: userId)),
-          );
-        } else {
-          print("The 'user_id' key is not present or not in the expected format.");
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        try {
+          userProvider.setUser(responseBody); // Assuming setUser expects a Map<String, dynamic>
+        } catch (error) {
+          print('Exception setting user provider: $error');
+          // Optionally show an error message to the user
         }
+        // Store the token securely
+        await prefs.setString('x-auth-token', responseBody['token']);
+
+        // Navigate to the HomeScreen
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (route) => false,
+        );
       } else {
-        print('Error sending Google Sign-In data to /home endpoint: ${response.statusCode}');
-        // Handle other error responses
+        print("Invalid response format received.");
       }
-    } catch (error) {
-      print('Error sending Google Sign-In data to /home endpoint: $error');
-      // Handle error
+    } else {
+      print(
+          'Error sending Google Sign-In data to backend: ${response.statusCode}');
+      // Optionally show an error message to the user
     }
   }
-
 }
-
-
-
