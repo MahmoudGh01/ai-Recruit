@@ -32,4 +32,12 @@ class UserProvider extends ChangeNotifier {
     _user.email = email;
     notifyListeners();
   }
+
+  void updateUserProfile(String birthdate, String jobTitle) {
+    // Update the user's profile on the backend
+    // Then update the local user object
+    _user.birthdate = birthdate;
+    _user.title = jobTitle;
+    notifyListeners();
+  }
 }

@@ -9,9 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path/path.dart';
 import '../models/user.dart';
 import '../providers/userprovider.dart';
-import '../screens/home_screen.dart';
-import '../screens/setpassword_screen.dart';
-import '../screens/signup_screen.dart';
+import '../screens/main_screen.dart';
+import '../screens/Auth/setpassword_screen.dart';
+import '../screens/Auth/signup_screen.dart';
 import '../utils/constants.dart';
 import '../utils/utils.dart';
 
@@ -79,7 +79,7 @@ class AuthService {
 
           navigator.pushAndRemoveUntil(
               MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
+                builder: (context) => const MainScreen(),
               ),
               (route) => false);
         },
@@ -284,7 +284,7 @@ class AuthService {
 
         // Navigate to the HomeScreen
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => MainScreen()),
           (route) => false,
         );
       } else {

@@ -1,6 +1,6 @@
 import 'package:airecruit/providers/userprovider.dart';
-import 'package:airecruit/screens/home_screen.dart';
-import 'package:airecruit/screens/signup_screen.dart';
+import 'package:airecruit/screens/main_screen.dart';
+import 'package:airecruit/screens/Auth/signup_screen.dart';
 import 'package:airecruit/services/Auth.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Provider.of<UserProvider>(context).user.token.isEmpty ?   SignupScreen()
-            : HomeScreen()
+            : MainScreen()
 
     );
   }

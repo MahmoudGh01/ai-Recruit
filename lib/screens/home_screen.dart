@@ -1,143 +1,156 @@
-
-import 'package:airecruit/utils/globalColors.dart';
+import 'package:airecruit/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:image_card/image_card.dart';
 
-import '../providers/userprovider.dart';
-import '../services/Auth.dart';
-import 'JobSeeker/Profile/filelist_screen.dart';
-import 'JobSeeker/Profile/profile_screen.dart';
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: JobListPage(),
+    );
+  }
+}
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class Job {
+  final String employerName;
+  final String employerLogo;
+  final String jobTitle;
+  final String jobDescription;
+  final String jobApplyLink;
 
-  void signOutUser(BuildContext context) async {
-    final bool shouldSignOut = await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Sign Out'),
-            content: Text('Do you want to sign out?'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(false),
-                child: Text('Cancel'),
-              ),
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                child: Text('Yes'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
+  Job({
+    required this.employerName,
+    required this.employerLogo,
+    required this.jobTitle,
+    required this.jobDescription,
+    required this.jobApplyLink,
+  });
 
-    if (shouldSignOut) {
-      AuthService().signOut(context);
+  factory Job.fromJson(Map<String, dynamic> json) {
+    return Job(
+      employerName: json['employer_name'] ?? 'N/A',
+      employerLogo: json['employer_logo'] ?? '',
+      jobTitle: json['job_title'] ?? 'N/A',
+      jobDescription: json['job_description'] ?? 'N/A',
+      jobApplyLink: json['job_apply_link'] ?? '',
+    );
+  }
+}
+
+class JobListPage extends StatefulWidget {
+  @override
+  _JobListPageState createState() => _JobListPageState();
+}
+
+class _JobListPageState extends State<JobListPage> {
+  List<Job> _jobs = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchJobs();
+  }
+
+  Future<void> _fetchJobs() async {
+    var queryParams = {
+      'query': 'Python developer in Texas, USA',
+    };
+
+    var url = Uri.https(
+      'jsearch.p.rapidapi.com',
+      '/search',
+      queryParams,
+    );
+
+    try {
+      var response = await http.get(
+        url,
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+          'X-RapidAPI-Key': '136114878emsh4b728b9983671a6p118402jsna9c59fae3d04', // Replace with your API key
+          'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        var jsonMap = json.decode(response.body);
+
+        if (jsonMap is Map<String, dynamic> && jsonMap.containsKey('data')) {
+          // Assuming the list of jobs is under the 'data' key
+          var jobsList = jsonMap['data'] as List;
+          setState(() {
+            _jobs = jobsList.map((jobJson) => Job.fromJson(jobJson)).toList();
+          });
+        } else {
+          showSnackBar(context, 'Unexpected JSON format');
+        }
+      } else {
+        showSnackBar(context, 'Error: ${response.statusCode}');
+      }
+    } on Exception catch (e) {
+      showSnackBar(context, e.toString());
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).user;
-
-    // Customize these colors as needed
-    Color primaryColor = GlobalColors.buttonColor; // Example primary color
-    Color accentColor = GlobalColors.primaryColor; // Example accent color
-    Color buttonColor = GlobalColors.buttonColor; // Example button color
-
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'Assets/logo.png',
-              width: 40,
-              height: 40,
-            ),
-            SizedBox(width: 10),
-            Text(
-              'Ai Recruit',
-              style: TextStyle(
-                  fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
-            ),
-          ],
-        ),
+      appBar: AppBar(title: Text('Job Listings'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text(user.name),
-              accountEmail: Text(user.email),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: accentColor,
-                backgroundImage: user.profilePicturePath.isNotEmpty
-                    ? NetworkImage(user.profilePicturePath)
-                    : AssetImage('assets/default_profile.png') as ImageProvider,
-              ),
-              decoration: BoxDecoration(
-                color: primaryColor,
-              ),
+      body: ListView.builder(
+        itemCount: _jobs.length,
+        itemBuilder: (context, index) {
+          var job = _jobs[index];
+          return Center(
+            child: TransparentImageCard(
+              width: double.infinity, // Assuming you want it to take the full width available
+              borderRadius: 12.0, // You can adjust the border radius as needed
+              imageProvider: NetworkImage(job.employerLogo),
+              //fallbackAssetImage: 'assets/placeholder.png', // Assuming you have a placeholder image in assets
+              tags: [
+                _tag(job.employerName, () {
+                  // TODO: Implement tag tap action, if needed
+                }),
+              ],
+              title: _title(job.jobTitle, color: Colors.white),
+              //description: _content(job.jobTitle, color: Colors.white),
+
+              // You may need to adjust the styles to match the TransparentImageCard's API
             ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-              onTap: () => Navigator.pop(context),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Profile'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen1()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('My resumes'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FilesListScreen()));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Sign Out'),
-              onTap: () => signOutUser(context),
-            ),
-          ],
-        ),
+          );
+        },
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("Username: ${user.name}",
-                  style: Theme.of(context).textTheme.headline6),
-              SizedBox(height: 20),
-              Text("Email: ${user.email}",
-                  style: Theme.of(context).textTheme.bodyText1),
-              SizedBox(height: 50),
-              ElevatedButton(
-                onPressed: () => signOutUser(context),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(buttonColor),
-                  minimumSize:
-                      MaterialStateProperty.all(Size(double.infinity, 50)),
-                ),
-                child: Text("Sign Out"),
-              ),
-            ],
-          ),
-        ),
+    );
+  }
+
+  Widget _tag(String text, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Chip(
+        label: Text(text),
+        backgroundColor: Colors.white.withOpacity(0.5),
       ),
+    );
+  }
+
+  Widget _title(String text, {Color color = Colors.white}) {
+    return Text(
+      text,
+      style: TextStyle(color: color, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget _content(String text, {Color color = Colors.white}) {
+    return Text(
+      text,
+      style: TextStyle(color: color),
     );
   }
 }

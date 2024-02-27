@@ -49,23 +49,7 @@ class _FilesListScreenState extends State<FilesListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'Assets/logo.png',
-              width: 40,
-              height: 40,
-            ),
-            SizedBox(width: 10),
-            Text(
-              'My Resumes',
-              style: TextStyle(
-                  fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
-            ),
-          ],
-        ),
-      ),
+
       body: FutureBuilder<List<String>>(
         future: filesList,
         builder: (context, snapshot) {
@@ -159,9 +143,6 @@ class _PdfViewPageState extends State<PdfViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Resume'),
-      ),
       body: PDFView(
         filePath: widget.path,
       ),

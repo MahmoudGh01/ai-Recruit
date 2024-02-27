@@ -1,0 +1,1 @@
+ /Users/mahmoudgharbi/Documents/Mahmoud/ai-Recruit/.dart_tool/flutter_build/6c71f2bc7c57bf11e299e16a54165104/native_assets.yaml: 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WiseGptState">
+    <option name="modifiedFileList">
+      <list>
+        <option value="$PROJECT_DIR$/lib/screens/Auth/ChangePassword_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Auth/forgotPassword_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Auth/login_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Auth/setpassword_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Auth/signup_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Auth/VerificationCode_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/services/Auth.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/splash_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/edit_profile_page.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/profile_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/profile_page.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/home_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/test.dart" />
+        <option value="$PROJECT_DIR$/.dart_tool/flutter_build/dart_plugin_registrant.dart" />
+        <option value="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/filelist_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/main_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/ResumeWidget.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/skill_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/resume_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/utils.dart" />
+      </list>
+    </option>
+  </component>
+</project>
