@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       # Specify the Docker image to use. This image includes Flutter.
-      - image: cirrusci/flutter:stable
+      - image: cirrusci/flutter:latest
     steps:
       - checkout
       # Restore cache (if available)
