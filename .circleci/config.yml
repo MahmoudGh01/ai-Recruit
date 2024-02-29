@@ -10,6 +10,7 @@ jobs:
     steps:
       - checkout
       - run: flutter doctor
+      - run: flutter channel
       - run: flutter upgrade
       - run: flutter clean
       - run: flutter build
