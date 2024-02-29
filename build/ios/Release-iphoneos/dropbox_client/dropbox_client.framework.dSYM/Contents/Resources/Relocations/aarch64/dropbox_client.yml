@@ -1,0 +1,35 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mahmoudgharbi/Documents/Mahmoud/ai-Recruit/build/ios/Release-iphoneos/dropbox_client/dropbox_client.framework/dropbox_client'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x45379, size: 0x8, addend: 0x0, symName: _dropbox_clientVersionString, symObjAddr: 0x0, symBinAddr: 0x7030, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0x453AD, size: 0x8, addend: 0x0, symName: _dropbox_clientVersionNumber, symObjAddr: 0x30, symBinAddr: 0x7060, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x453E9, size: 0x8, addend: 0x0, symName: '+[DropboxPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0xAC }
+  - { offsetInCU: 0x40, offset: 0x45402, size: 0x8, addend: 0x0, symName: _channel, symObjAddr: 0xAEA0, symBinAddr: 0xD818, symSize: 0x0 }
+  - { offsetInCU: 0xD5, offset: 0x45497, size: 0x8, addend: 0x0, symName: '+[DropboxPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0xAC }
+  - { offsetInCU: 0x11F, offset: 0x454E1, size: 0x8, addend: 0x0, symName: '+[DropboxPlugin topMostController]', symObjAddr: 0xAC, symBinAddr: 0x40AC, symSize: 0xCC }
+  - { offsetInCU: 0x15E, offset: 0x45520, size: 0x8, addend: 0x0, symName: '-[DropboxPlugin authURLwithAppKey:]', symObjAddr: 0x178, symBinAddr: 0x4178, symSize: 0x24C }
+  - { offsetInCU: 0x1BB, offset: 0x4557D, size: 0x8, addend: 0x0, symName: '-[DropboxPlugin handleMethodCall:result:]', symObjAddr: 0x3C4, symBinAddr: 0x43C4, symSize: 0x1160 }
+  - { offsetInCU: 0x563, offset: 0x45925, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke', symObjAddr: 0x1524, symBinAddr: 0x5524, symSize: 0x80 }
+  - { offsetInCU: 0x597, offset: 0x45959, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke_2', symObjAddr: 0x15A4, symBinAddr: 0x55A4, symSize: 0x54 }
+  - { offsetInCU: 0x5CB, offset: 0x4598D, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke_3', symObjAddr: 0x15F8, symBinAddr: 0x55F8, symSize: 0x64 }
+  - { offsetInCU: 0x640, offset: 0x45A02, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32b, symObjAddr: 0x165C, symBinAddr: 0x565C, symSize: 0x10 }
+  - { offsetInCU: 0x666, offset: 0x45A28, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s, symObjAddr: 0x166C, symBinAddr: 0x566C, symSize: 0x8 }
+  - { offsetInCU: 0x683, offset: 0x45A45, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.72', symObjAddr: 0x1674, symBinAddr: 0x5674, symSize: 0x12C }
+  - { offsetInCU: 0x756, offset: 0x45B18, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40b, symObjAddr: 0x17A0, symBinAddr: 0x57A0, symSize: 0x34 }
+  - { offsetInCU: 0x77C, offset: 0x45B3E, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s, symObjAddr: 0x17D4, symBinAddr: 0x57D4, symSize: 0x28 }
+  - { offsetInCU: 0x799, offset: 0x45B5B, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.84', symObjAddr: 0x17FC, symBinAddr: 0x57FC, symSize: 0x140 }
+  - { offsetInCU: 0x840, offset: 0x45C02, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.103', symObjAddr: 0x193C, symBinAddr: 0x593C, symSize: 0x90 }
+  - { offsetInCU: 0x8BD, offset: 0x45C7F, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.107', symObjAddr: 0x19CC, symBinAddr: 0x59CC, symSize: 0xE4 }
+  - { offsetInCU: 0x922, offset: 0x45CE4, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s, symObjAddr: 0x1AB0, symBinAddr: 0x5AB0, symSize: 0x8 }
+  - { offsetInCU: 0x946, offset: 0x45D08, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.115', symObjAddr: 0x1AB8, symBinAddr: 0x5AB8, symSize: 0x90 }
+  - { offsetInCU: 0x9C3, offset: 0x45D85, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke_2.116', symObjAddr: 0x1B48, symBinAddr: 0x5B48, symSize: 0xE4 }
+  - { offsetInCU: 0xA28, offset: 0x45DEA, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke_3.120', symObjAddr: 0x1C2C, symBinAddr: 0x5C2C, symSize: 0x90 }
+  - { offsetInCU: 0xAB7, offset: 0x45E79, size: 0x8, addend: 0x0, symName: '___41-[DropboxPlugin handleMethodCall:result:]_block_invoke.124', symObjAddr: 0x1CBC, symBinAddr: 0x5CBC, symSize: 0xEC }
+  - { offsetInCU: 0xB20, offset: 0x45EE2, size: 0x8, addend: 0x0, symName: '-[DropboxPlugin parseEntries:]', symObjAddr: 0x1DA8, symBinAddr: 0x5DA8, symSize: 0x3C0 }
+  - { offsetInCU: 0xBD1, offset: 0x45F93, size: 0x8, addend: 0x0, symName: '-[DropboxPlugin listFolderContinue:result:array:]', symObjAddr: 0x2168, symBinAddr: 0x6168, symSize: 0x148 }
+  - { offsetInCU: 0xC44, offset: 0x46006, size: 0x8, addend: 0x0, symName: '___49-[DropboxPlugin listFolderContinue:result:array:]_block_invoke', symObjAddr: 0x22B0, symBinAddr: 0x62B0, symSize: 0x128 }
+  - { offsetInCU: 0xD14, offset: 0x460D6, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40s48b, symObjAddr: 0x23D8, symBinAddr: 0x63D8, symSize: 0x3C }
+  - { offsetInCU: 0xD3A, offset: 0x460FC, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s48s, symObjAddr: 0x2414, symBinAddr: 0x6414, symSize: 0x30 }
+  - { offsetInCU: 0xD57, offset: 0x46119, size: 0x8, addend: 0x0, symName: '-[DropboxPlugin .cxx_destruct]', symObjAddr: 0x2444, symBinAddr: 0x6444, symSize: 0xC }
+...

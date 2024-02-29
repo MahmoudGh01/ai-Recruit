@@ -1,19 +1,23 @@
-version: '2.1'
+version: 2.1
 orbs:
-  flutter: circleci/flutter@2.0.0
+  flutter: circleci/flutter@1.0.0
 jobs:
-  distribute:
-    macos:
-      xcode: 15.2.0
+  build-and-test:
+    docker:
+      - image: cirrusci/flutter:stable
     steps:
-      - flutter/install_sdk_and_pub:
-          version: 3.0.3
-      - flutter/install_ios_pod
-      - flutter/install_ios_gem
+      - checkout
+      - flutter/install
       - run:
-          command: bundle exec fastlane distribute
-          working_directory: ios
+          name: Get Flutter Dependencies
+          command: flutter pub get
+
+      - run:
+          name: Build iOS Release
+          command: |
+            flutter build ios --release --no-codesign
 workflows:
-  distribute:
+  version: 2
+  build:
     jobs:
-      - distribute
+      - build-and-test
