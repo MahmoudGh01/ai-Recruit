@@ -4,7 +4,7 @@ orbs:
 jobs:
   distribute:
     macos:
-      xcode: 12.5.1
+      xcode: 15.2.0
     steps:
       - flutter/install_sdk_and_pub:
           version: 3.0.3
