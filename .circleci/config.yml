@@ -9,8 +9,8 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - checkout
+      - run: flutter channel stable
       - run: flutter doctor
-      - run: flutter channel
       - run: flutter upgrade
       - run: flutter clean
       - run: flutter build
