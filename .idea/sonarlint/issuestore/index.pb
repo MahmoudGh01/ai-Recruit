@@ -57,3 +57,11 @@ U
 %lib/screens/Jobs/job_list_screen.dart,f/e/fee4d1590cbbe15da9c271c22e16eb45a10bb9f1
 M
 lib/services/job_service.dart,e/6/e6772840d77c9775496e12a1da53f7eaf4f2030f
+[
++lib/services/jobApplicationsController.dart,2/0/20da36816be5a356b72add781c25aefd00f791e9
+I
+lib/models/job_model.dart,b/1/b13bc5a4b2b70d92487c28ba3f5d50203199cfec
+_
+/lib/screens/JobApplication/ApplicationForm.dart,a/5/a56820c3c2942cc2103b408a3b740708d544497a
+c
+3lib/screens/JobApplication/JobApplicationState.dart,4/f/4ff82e3add4f937a25655c1b8319c99e7c6dc426

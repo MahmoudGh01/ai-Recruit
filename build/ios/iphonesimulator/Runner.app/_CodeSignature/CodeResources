@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		qC18SYfYvcrR84QmTS5Y9e/unjQ=
+		7vrLfiE0yjkLneEbltjF+gC4xQA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,19 +54,23 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		YcoTh8zSmI/kTmoncUcKdm+KyE8=
+		/CwAjnNZmzjExpjLG2j8S39yIoo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		nwBKYRs2/swFDnV7KRpg3sPlegQ=
+		44xA6KdyEVtpv62nUA9GPLi1aVU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		RWNR42MvnWVW5wyewmoTtgxVctE=
+		QoudWDWxEYn7GxUCFgZ9I5s+Rts=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/Assets/logo-google.jpeg</key>
+		<data>
+		Dc2OZzEpn7O20RZrw8RsY4hZizE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/Assets/logo.png</key>
 		<data>
-		NojkutfywVxWf1SeTpFhjHNS5mc=
+		DgYrjcvthNLhiYVwj+O7Dqblx6U=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/Assets/profile_image.jpg</key>
 		<data>
@@ -78,7 +82,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		vRBkvsyrJs7N5LsKTc5OTYe8Ulc=
+		w2ds5Cvn9o2h6TH4DGlZ06Q/dKw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -90,7 +94,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		xifBH8rKot0a0yXp0n5JfATkXMk=
+		er3bst21haXHsvpATn5ZmqiQHiA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -869,6 +873,18 @@
 		<data>
 		VpgsfUdzWfqujgyWc2cD617j3QI=
 		</data>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/Info.plist</key>
+		<data>
+		EIcDDlxmVqdcpaxh5eI36Oyd6ns=
+		</data>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/ObjectiveDropboxOfficial</key>
+		<data>
+		nfVxgz07vnJEsr36zjQcMaRuo10=
+		</data>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Tsu/Rj7RSWFfO5e8xCUmQGhlNOI=
+		</data>
 		<key>Frameworks/SDWebImage.framework/Info.plist</key>
 		<data>
 		7q9UOfXFsqES5MSBy0mjeWMEiHU=
@@ -900,6 +916,18 @@
 		<key>Frameworks/SwiftyGif.framework/_CodeSignature/CodeResources</key>
 		<data>
 		MASxeIlGyCrG6JvrplTgkWQx+bk=
+		</data>
+		<key>Frameworks/dropbox_client.framework/Info.plist</key>
+		<data>
+		dMo60+VuKjjZ6G/t6bl14mZBkYw=
+		</data>
+		<key>Frameworks/dropbox_client.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Ghrt0+6Qmd28jYa+bJqajfz7j58=
+		</data>
+		<key>Frameworks/dropbox_client.framework/dropbox_client</key>
+		<data>
+		rSucPERMKmXvpyWkOGUWPGPV9aI=
 		</data>
 		<key>Frameworks/file_picker.framework/Info.plist</key>
 		<data>
@@ -1078,7 +1106,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			11FLUHzxPUYn36opfMqFHStKgn9sTT4OZ+zNobdsC+s=
+			Sp/G3OSkg2NAXA5PTu2Fc1ct+83vpfRqoFSaiZGBDRM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1092,28 +1120,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hKAtxfApQKFY2cmgXvlbB3baRtyLzuYYwn/03B7DnqU=
+			2C1tvbm0Z5Q19WZDPRxURT7Mz6WVwVqHvLizTF1CPVI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WrertTeQffqD3osgd31BrqUTHScvRxL2i8nOUYeiCls=
+			k36D6B2BG7HTsvB1u+PZVGWd9PhkL45vI+4ulvtdpAw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UCym0ZShqXgp49FtFCG+dy6D6UrWwI8/9h0ZjGb6+jk=
+			kzYTQYFxCrmsXl/4c2p1bHxx2Gkuh+hyJ1xH6IAg2P4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/Assets/logo-google.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YSVsYNaZ2h8iK1nqWLHtZvigxe/DaV417Wlgl5EoBWc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/Assets/logo.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HRP7yrwabSvkicACXivH0+PpMU8hNNkVRsp5puYzceU=
+			SBXj1ASbNZJydeutDS7d/ZAk7hsw0tRivxOwG1Rvh4s=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/Assets/profile_image.jpg</key>
@@ -1134,7 +1169,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8T+ZdCFTUtpCTcRXcyq4pIAO6Osuj68o600mccGNZJc=
+			u3jHPALQ4fkIZF04Hmd2R759oymFEctdNJew16yAKyo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -1155,7 +1190,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q6C3qSAdCI4y/JHA57a9rvbrZ1fby+SF8rEq88n9NCg=
+			yNPc58+/ZNCjr5elGgksMzL4gjE9opgJV6mK82qZbpw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -2106,6 +2141,27 @@
 			3dPD3tCUMlWbC2m+9U2sDhFIlQz/Pu+ZX5rJ6Zehg6Q=
 			</data>
 		</dict>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lno9ezaVxJ23ODO4mJjwmYesI5DU6pV+KOaz8jFzwl8=
+			</data>
+		</dict>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/ObjectiveDropboxOfficial</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ITEjOUtQhfYmI7c26U9wH5USGD2tH8aElU8iUp9RiQ0=
+			</data>
+		</dict>
+		<key>Frameworks/ObjectiveDropboxOfficial.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			boe2pxUtb/nVsh2Z8wIX7a1Q74hydbtectv4fsQIs6Q=
+			</data>
+		</dict>
 		<key>Frameworks/SDWebImage.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -2160,6 +2216,27 @@
 			<key>hash2</key>
 			<data>
 			yAAVYO6wCpE+AJpi2eD3VKJrRviHEDYfQdWmXqRwPFA=
+			</data>
+		</dict>
+		<key>Frameworks/dropbox_client.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VXaodA1T4WsSYeXxlu2d3aj/rwqSzu0qGH053kYEAwM=
+			</data>
+		</dict>
+		<key>Frameworks/dropbox_client.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i/1HASZexw/KxrQ5ZMDEUPtmF59nZmEK3CLMWbIn5/s=
+			</data>
+		</dict>
+		<key>Frameworks/dropbox_client.framework/dropbox_client</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ogSRIreonEXeeDx6gpC1Jy/CZZS7DVYPcVwChCIO4+s=
 			</data>
 		</dict>
 		<key>Frameworks/file_picker.framework/Info.plist</key>

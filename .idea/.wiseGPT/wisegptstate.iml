@@ -25,6 +25,34 @@
         <option value="$PROJECT_DIR$/lib/widgets/skill_widget.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/resume_widget.dart" />
         <option value="$PROJECT_DIR$/lib/utils/utils.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/add_skill_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/constants.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/social_medialink_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/widgets/work_experience_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/models/job_service.dart" />
+        <option value="$PROJECT_DIR$/lib/models/job_model.dart" />
+        <option value="$PROJECT_DIR$/lib/services/job_service.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/edit_job_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/job_list_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/job_details_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/create_job_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplication.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplicationState.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/ApplicationForm.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplicationData.dart" />
+        <option value="$PROJECT_DIR$/lib/models/JobApplication.dart" />
+        <option value="$PROJECT_DIR$/lib/models/JobApplicationData.dart" />
+        <option value="$PROJECT_DIR$/lib/services/jobApplicationsController.dart" />
+        <option value="$PROJECT_DIR$/lib/models/Jobs.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/custom_textfield.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplicationState (1).dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplication/ApplicationForm.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobApplication/JobApplicationState.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/head_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobSkills_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobRole_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobDetail_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobDescription_widget.dart" />
       </list>
     </option>
   </component>

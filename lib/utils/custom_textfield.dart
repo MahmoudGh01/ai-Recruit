@@ -1,3 +1,4 @@
+import 'package:airecruit/utils/globalColors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -6,9 +7,15 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final IconData? prefixIcon;
   final Widget? suffixIcon;
-  final Color? iconColor; // Icon color parameter
-  final TextInputType? keyboardType; // Keyboard type parameter
-  final TextInputAction? textInputAction; // Text input action parameter
+  final Color? iconColor;
+  final double? width;
+  final Color borderColor;
+  final double borderRadius;
+  final Color focusedBorderColor; // New property for focused border color
+  final double focusedBorderWidth; // New property for focused border width
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final FormFieldValidator<String>? validator;
 
   const CustomTextField({
     Key? key,
@@ -18,23 +25,44 @@ class CustomTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.iconColor,
-    this.keyboardType, // Initialize keyboardType
-    this.textInputAction, // Initialize textInputAction
+    this.width,
+    this.borderColor = Colors.grey,
+    this.borderRadius = 8.0,
+    this.focusedBorderColor =
+        GlobalColors.secondaryColor, // Initialize focused border color
+    this.focusedBorderWidth = 2.0, // Initialize focused border width
+    this.keyboardType,
+    this.textInputAction,
+    this.validator,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hintText,
-        border: OutlineInputBorder(),
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon, color: iconColor) : null,
-        suffixIcon: suffixIcon,
+    return Container(
+      width: width,
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: borderColor),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          focusedBorder: OutlineInputBorder(
+            // Customize the focused border
+            borderSide: BorderSide(
+                color: focusedBorderColor, width: focusedBorderWidth),
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+          prefixIcon:
+          prefixIcon != null ? Icon(prefixIcon, color: iconColor) : null,
+          suffixIcon: suffixIcon,
+        ),
+        obscureText: obscureText,
+        keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        validator: validator,
       ),
-      obscureText: obscureText,
-      keyboardType: keyboardType, // Set keyboardType
-      textInputAction: textInputAction, // Set textInputAction
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:airecruit/screens/JobApplication/JobApplicationState.dart';
 import 'package:airecruit/screens/JobSeeker/Profile/profile_screen.dart';
 import 'package:airecruit/screens/home_screen.dart';
 import 'package:airecruit/utils/globalColors.dart';
@@ -8,6 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/userprovider.dart';
 import '../services/Auth.dart';
+import 'JobApplication/ApplicationForm.dart';
 import 'JobSeeker/Profile/filelist_screen.dart';
 import 'Jobs/job_list_screen.dart';
 
@@ -57,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _buildScreens() {
     return [
       JobListScreen(), // Assuming this is your home screen
-      FilesListScreen(),
+      JobApplicationsScreen(),
       ProfileScreen1(),
     ];
   }
@@ -88,23 +90,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'Assets/logo.png',
-              width: 40,
-              height: 40,
-            ),
-            SizedBox(width: 10),
-            Text(
-              'My Job Applications',
-              style: TextStyle(
-                  fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
-            ),
-          ],
-        ),
-      ),
+
       body: PersistentTabView(
         context,
         controller: _controller,

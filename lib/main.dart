@@ -3,14 +3,13 @@ import 'package:airecruit/screens/main_screen.dart';
 import 'package:airecruit/screens/Auth/signup_screen.dart';
 import 'package:airecruit/services/Auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create:(_)=>UserProvider())
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => UserProvider())],
       child: const MyApp()));
 }
 
@@ -29,20 +28,26 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     authService.getUserData(context);
   }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
+          textTheme: GoogleFonts.robotoTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+          ),
           primarySwatch: Colors.deepOrange,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Provider.of<UserProvider>(context).user.token.isEmpty ?   SignupScreen()
-            : MainScreen()
-
-    );
+        home: Provider.of<UserProvider>(context).user.token.isEmpty
+            ? SignupScreen()
+            : MainScreen());
   }
 }
-

@@ -86,7 +86,26 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Image.asset(
+              'Assets/logo.png',
+              width: 40,
+              height: 40,
+            ),
+            SizedBox(width: 10),
+            Text(
+              'My Profile',
+              style: TextStyle(
+                  fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
+            ),
+
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
+
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[

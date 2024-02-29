@@ -31,6 +31,7 @@ class JobModel {
       employmentType: json['employment_type'],
       salaryCompensation: json['salary_compensation'],
       skillsQualifications: json['skills_qualifications'],
+
     );
   }
 

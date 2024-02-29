@@ -46,6 +46,7 @@ class _EditJobScreenState extends State<EditJobScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Job'),
+        backgroundColor: Color(0xFFed6843),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -86,6 +87,10 @@ class _EditJobScreenState extends State<EditJobScreen> {
                   );
                 },
                 child: Text('Save Changes'),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFFed6843),
+                  onPrimary: Colors.white,
+                ),
               ),
             ],
           ),
@@ -103,6 +108,7 @@ class _EditJobScreenState extends State<EditJobScreen> {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
+            color: Color(0xFFed6843),
           ),
         ),
         SizedBox(height: 4),
