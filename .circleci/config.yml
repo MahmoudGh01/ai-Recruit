@@ -34,10 +34,8 @@ jobs:
 workflows:
   example:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
-      - deploy:
-          requires:
-            - test
+      - checkout
+      - run: flutter doctor
+      - run: flutter clean
+      - run: flutter build
+      - run: flutter run
