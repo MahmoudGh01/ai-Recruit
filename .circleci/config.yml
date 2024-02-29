@@ -1,30 +1,19 @@
-version: 2.1
-
+version: '2.1'
+orbs:
+  flutter: circleci/flutter@2.0.0
 jobs:
-  build:
-    docker:
-      # Specify the Docker image to use. This image includes Flutter.
-      - image: cirrusci/flutter:latest
+  distribute:
+    macos:
+      xcode: 15.1.0
     steps:
-      - checkout
-      # Restore cache (if available)
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "pubspec.yaml" }}
-            - v1-dependencies-
-      # Get dependencies
-      - run: flutter pub get
-      # Save cache for future builds
-      - save_cache:
-          paths:
-            - ~/.pub-cache
-          key: v1-dependencies-{{ checksum "pubspec.yaml" }}
-      # Run Flutter build
-      - run: flutter build apk --release
-
+      - flutter/install_sdk_and_pub:
+          version: 3.2.2
+      - flutter/install_ios_pod
+      - flutter/install_ios_gem
+      - run:
+          command: bundle exec fastlane distribute
+          working_directory: ios
 workflows:
-  version: 2
-  build_and_test:
+  distribute:
     jobs:
-      - build
-
+      - distribute
