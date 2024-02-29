@@ -6,7 +6,7 @@ jobs:
 
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cirrusci/flutter
     steps:
       - checkout
       - run: flutter doctor
