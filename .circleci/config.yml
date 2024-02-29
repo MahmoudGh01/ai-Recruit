@@ -1,23 +1,30 @@
 version: 2.1
-orbs:
-  flutter: circleci/flutter@1.0.0
+
 jobs:
-  build-and-test:
+  build:
     docker:
+      # Specify the Docker image to use. This image includes Flutter.
       - image: cirrusci/flutter:stable
     steps:
       - checkout
-      - flutter/install
-      - run:
-          name: Get Flutter Dependencies
-          command: flutter pub get
+      # Restore cache (if available)
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pubspec.yaml" }}
+            - v1-dependencies-
+      # Get dependencies
+      - run: flutter pub get
+      # Save cache for future builds
+      - save_cache:
+          paths:
+            - ~/.pub-cache
+          key: v1-dependencies-{{ checksum "pubspec.yaml" }}
+      # Run Flutter build
+      - run: flutter build apk --release
 
-      - run:
-          name: Build iOS Release
-          command: |
-            flutter build ios --release --no-codesign
 workflows:
   version: 2
-  build:
+  build_and_test:
     jobs:
-      - build-and-test
+      - build
+
