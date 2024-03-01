@@ -1,15 +1,16 @@
 version: '2.1'
 orbs:
+  android: circleci/android@1.0.3
   flutter: circleci/flutter@2.0.0
 jobs:
   distribute:
-    macos:
-      xcode: 15.1.0
+    executor:
+      name: android/android-machine
     steps:
       - flutter/install_sdk_and_pub:
-          version: 3.2.2
-      - flutter/install_ios_pod
-      - flutter/install_ios_gem
+          version: 3.0.3
+      - flutter/install_android_gradle_dependencies
+      - flutter/install_android_gem
       - run:
           command: bundle exec fastlane distribute
           working_directory: ios
