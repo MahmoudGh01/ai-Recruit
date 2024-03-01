@@ -16,11 +16,6 @@ flutter doctor
 echo "Installed flutter to `pwd`/flutter"
 
 cd ./ios
-flutter precache --ios
-flutter pub get
-pod install
-flutter build ios --release
-
 post_install do |installer|
  installer.pods_project.targets.each do |target|
   target.build_configurations.each do |config|
@@ -28,3 +23,8 @@ post_install do |installer|
   end
  end
 end
+flutter precache --ios
+flutter pub get
+pod install
+flutter build ios --release
+

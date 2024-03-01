@@ -10,7 +10,7 @@ import AppCenterCrashes
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-      AppCenter.start(withAppSecret: "fcb4bef7-3432-41f2-8df7-01330afd03ef", services:[
+      AppCenter.start(withAppSecret: "1d816e04-6fb2-4e99-894f-4e8a416dd2c9", services:[
         Analytics.self,
         Crashes.self
       ])
