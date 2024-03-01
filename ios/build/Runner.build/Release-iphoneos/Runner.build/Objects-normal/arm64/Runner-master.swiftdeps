@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)"
 options: "724725b1c2828a6bce661ed23cbd060887719738b27b8abb2690488f7c954766"
-build_start_time: [1709254241, 843918000]
-build_end_time: [1709254243, 441728000]
+build_start_time: [1709256104, 118445000]
+build_end_time: [1709256105, 798673000]
 inputs:
   "/Users/mahmoudgharbi/Documents/Mahmoud/ai-Recruit/ios/Runner/AppDelegate.swift": !dirty [1709253739, 686479453]
   ? "/Users/mahmoudgharbi/Documents/Mahmoud/ai-Recruit/ios/build/Runner.build/Release-iphoneos/Runner.build/DerivedSources/GeneratedAssetSymbols.swift"

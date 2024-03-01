@@ -20,5 +20,6 @@ cd ./ios
 flutter precache --ios
 flutter pub get
 pod install
+xcodebuild -allowProvisioningUpdates
 flutter build ios --release
 
