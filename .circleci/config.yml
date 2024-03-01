@@ -13,11 +13,8 @@ jobs:
     steps:
       - checkout
 
-      - flutter/install_sdk:
-          version: 3.7.9
-
-      - flutter/install_pub:
-          cache-version: v1
+      - flutter/install_sdk_and_pub:
+          version: 3.0.3
 
 
 
