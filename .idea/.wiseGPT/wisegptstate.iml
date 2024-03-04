@@ -53,6 +53,8 @@
         <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobRole_widget.dart" />
         <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobDetail_widget.dart" />
         <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobDescription_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/globalColors.dart" />
+        <option value="$PROJECT_DIR$/lib/providers/userprovider.dart" />
       </list>
     </option>
   </component>

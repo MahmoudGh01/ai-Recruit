@@ -1,9 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:social_login_buttons/social_login_buttons.dart';
 import '../../services/Auth.dart';
-import '../../utils/custom_textfield.dart';
+import '../../utils/custom_textfield.dart'; // Make sure this path matches the location of your CustomTextField file
 import '../../utils/globalColors.dart'; // Assuming this contains your color scheme
 import 'login_screen.dart';
 
@@ -19,148 +19,149 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final AuthService authService = AuthService();
-  File? _image;
-
-  final ImagePicker _picker = ImagePicker();
-
-  Future<void> _pickImage() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        _image = File(pickedFile.path);
-      });
-    }
-  }
 
   void signupUser() {
-    if (_image != null) {
-      authService.signUpUser(
-        context: context,
-        email: emailController.text,
-        password: passwordController.text,
-        name: nameController.text,
-        imageFile: _image!, // Pass the selected image file
-      );
-    } else {
-      // Handle the case when an image is not selected
-      // For example, show a snackbar message
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Please select an image.')));
+    authService.signUpUser(
+      context: context,
+      email: emailController.text,
+      password: passwordController.text,
+      name: nameController.text,
+    );
+  }
+  final GoogleSignIn googleSignIn = GoogleSignIn(
+      clientId:
+      '104792978938-8osg03385fiif0h9n084j2raadlacgsv.apps.googleusercontent.com',
+      scopes: ['email']);
+
+
+  Future<void> _handleSignIn() async {
+    try {
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+
+      if (googleUser != null) {
+        // Send Google Sign-In data to the backend
+        final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+        final String? code = googleAuth.idToken;
+
+        if (code != null) {
+          await authService.sendGoogleSignInDataToBackend(code, context);
+        }
+      }
+    } catch (error) {
+      print('Error during Google Sign-In: $error');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Image.asset(
+              'Assets/logo.png',
+              width: 60,
+              height: 60,
+            ),
+            SizedBox(width: 10),
+             Text(
+              'Join Us Today',
+              style: TextStyle(
+                color: GlobalColors.secondaryColor,
+                  fontSize: 30,
+              fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 60),
-              Text(
-                'Join AiRecruit Today',
-                style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: GlobalColors.primaryColor), // Use global color
-              ),
-              SizedBox(height: 8),
-              Text(
-                'Unlock Your Productivity Potential!',
-                style: TextStyle(
-                    fontSize: 18,
-                    color: GlobalColors.secondaryColor), // Use global color
-              ),
-              SizedBox(height: 48),
-              Text(
-                'Fullname',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: GlobalColors.primaryColor),
-              ),
-              SizedBox(height: 8),
+              const SizedBox(height: 48),
+              // Fullname TextField with Icon
               CustomTextField(
                 controller: nameController,
                 hintText: 'Enter your name',
+                borderColor: GlobalColors.primaryColor,
+                focusedBorderColor: GlobalColors.secondaryColor,
+                borderRadius: 8.0,
+                prefixIcon: Icons.person, // Fullname icon
               ),
-              SizedBox(height: 24),
-              Text(
-                'Email',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: GlobalColors.primaryColor),
-              ),
-              SizedBox(height: 8),
+              const SizedBox(height: 24),
+              // Email TextField with Icon
               CustomTextField(
                 controller: emailController,
                 hintText: 'Enter your email',
+                borderColor: GlobalColors.primaryColor,
+                focusedBorderColor: GlobalColors.secondaryColor,
+                borderRadius: 8.0,
+                prefixIcon: Icons.email, // Email icon
               ),
-              SizedBox(height: 24),
-              Text(
-                'Password',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: GlobalColors.primaryColor),
-              ),
-              SizedBox(height: 8),
+              const SizedBox(height: 24),
+              // Password TextField with Icon
               CustomTextField(
                 controller: passwordController,
                 hintText: 'Enter your password',
+                obscureText: true,
+                borderColor: GlobalColors.primaryColor,
+                focusedBorderColor: GlobalColors.secondaryColor,
+                borderRadius: 8.0,
+                prefixIcon: Icons.lock, // Password icon
               ),
-              SizedBox(height: 24),
-              // Add a widget to show the selected image or a placeholder
-              Center(
-                child: GestureDetector(
-                  onTap: _pickImage,
-                  child: _image != null
-                      ? CircleAvatar(
-                          radius: 60,
-                          backgroundImage: FileImage(_image!),
-                        )
-                      : CircleAvatar(
-                          radius: 60,
-                          backgroundColor: Colors.grey.shade200,
-                          child: Icon(Icons.camera_alt,
-                              color: Colors.grey.shade800),
-                        ),
-                ),
-              ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: ElevatedButton(
                   onPressed: signupUser,
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GlobalColors.buttonColor), // Use global color
+                        GlobalColors.buttonColor),
                     minimumSize: MaterialStateProperty.all(
-                        Size(double.infinity, 50)), // Full width button
+                        const Size(double.infinity, 50)),
                   ),
-                  child: Text("Sign up"),
+                  child: const Text("Sign up",style: TextStyle(color: GlobalColors.white),),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
-                child: Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already have an account? "),
+                    const Text("Already have an account? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
                       },
-                      child: Text("Sign In",
-                          style: TextStyle(
-                              color: GlobalColors
-                                  .linkColor)), // Corrected action text and use global color
+                      child: const Text("Sign In",
+                          style: TextStyle(color: GlobalColors.linkColor)),
                     ),
+                    const Text("or continue with"),
+                    const SizedBox(height: 16),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SocialLoginButton(
+                          buttonType: SocialLoginButtonType.google,
+                          onPressed: () async {
+                            // Perform Google Sign-In
+                            try {
+                              await _handleSignIn();
+                            } catch (error) {
+                              print('Error during Google Sign-In: $error');
+                            }
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        SocialLoginButton(
+                          buttonType: SocialLoginButtonType.github,
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+
                   ],
                 ),
               ),

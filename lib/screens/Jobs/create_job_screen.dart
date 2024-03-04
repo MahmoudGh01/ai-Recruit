@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:airecruit/models/job_model.dart';
 import 'package:airecruit/services/job_service.dart';
 
-
 class CreateJobScreen extends StatefulWidget {
   @override
   _CreateJobScreenState createState() => _CreateJobScreenState();
@@ -16,7 +15,8 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
   late TextEditingController locationController;
   late TextEditingController employmentTypeController;
   late TextEditingController salaryCompensationController;
-  late TextEditingController skillsQualificationsController;
+  List<String> requirements = []; // Store job requirements as a list of strings
+  late TextEditingController requirementController = TextEditingController();
 
   @override
   void initState() {
@@ -27,7 +27,22 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
     locationController = TextEditingController();
     employmentTypeController = TextEditingController();
     salaryCompensationController = TextEditingController();
-    skillsQualificationsController = TextEditingController();
+    requirementController = TextEditingController();
+  }
+
+  void addRequirement() {
+    if (requirementController.text.isNotEmpty) {
+      setState(() {
+        requirements.add(requirementController.text);
+        requirementController.clear();
+      });
+    }
+  }
+
+  void removeRequirement(int index) {
+    setState(() {
+      requirements.removeAt(index);
+    });
   }
 
   @override
@@ -51,28 +66,35 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
               buildTextField(
                   'Salary and Compensation', salaryCompensationController),
               buildTextField(
-                  'Skills and Qualifications', skillsQualificationsController),
+                  'Skills and Qualifications', requirementController),
               SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () async {
-                  JobModel newJob = JobModel(
-                    id: '', // Leave the id empty as it will be generated on the server
-                    jobTitle: jobTitleController.text,
-                    jobDescription: jobDescriptionController.text,
-                    companyInformation: companyInformationController.text,
-                    location: locationController.text,
-                    employmentType: employmentTypeController.text,
-                    salaryCompensation: salaryCompensationController.text,
-                    skillsQualifications: skillsQualificationsController.text,
-                  );
-
-                  await _jobService.createJob(newJob);
-
-                  // Navigate back to the job list screen
-                  Navigator.pop(context);
-                },
-                child: Text('Create Job'),
-              ),
+              Column(
+                children: [
+                  TextField(
+                    controller: requirementController,
+                    decoration: InputDecoration(
+                      labelText: "Add Requirement",
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: addRequirement,
+                      ),
+                    ),
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: requirements.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Text(requirements[index]),
+                        trailing: IconButton(
+                          icon: Icon(Icons.remove_circle_outline),
+                          onPressed: () => removeRequirement(index),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              )
             ],
           ),
         ),

@@ -5,14 +5,6 @@ PODS:
   - AppAuth/Core (1.6.2)
   - AppAuth/ExternalUserAgent (1.6.2):
     - AppAuth/Core
-  - AppCenter (5.0.4):
-    - AppCenter/Analytics (= 5.0.4)
-    - AppCenter/Crashes (= 5.0.4)
-  - AppCenter/Analytics (5.0.4):
-    - AppCenter/Core
-  - AppCenter/Core (5.0.4)
-  - AppCenter/Crashes (5.0.4):
-    - AppCenter/Core
   - DKImagePickerController/Core (4.3.4):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -82,7 +74,6 @@ PODS:
   - SwiftyGif (5.4.4)
 
 DEPENDENCIES:
-  - AppCenter
   - dropbox_client (from `.symlinks/plugins/dropbox_client/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
@@ -96,7 +87,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
-    - AppCenter
     - DKImagePickerController
     - DKPhotoGallery
     - GoogleSignIn
@@ -128,7 +118,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
-  AppCenter: 85c92db0759d2792a65eb61d6842d2e86611a49a
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
   dropbox_client: d876dfb94067101d8ae69130e866b48cff9f5f84
@@ -147,6 +136,6 @@ SPEC CHECKSUMS:
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
 
-PODFILE CHECKSUM: acb8322b0aeb320152fb7e03bdf744c4ab7260b0
+PODFILE CHECKSUM: 39804e2b974037415d1eacf0fc069dce7d12eae7
 
 COCOAPODS: 1.15.2

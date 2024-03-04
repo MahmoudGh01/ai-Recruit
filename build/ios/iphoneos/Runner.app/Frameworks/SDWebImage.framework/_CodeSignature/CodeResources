@@ -6,11 +6,11 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		txnDq6fpa5GP4Ex/dDdMePIU0NA=
+		o8AyPMkpayec/JCrIFq8xkiArjg=
 		</data>
 		<key>SDWebImage.bundle/Info.plist</key>
 		<data>
-		0EMrsFliR80/3ip0dZTLWsAVCHA=
+		BQs/IzK9pw5Q3Vpy50xgorYVqUE=
 		</data>
 		<key>SDWebImage.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -21,21 +21,13 @@
 	<dict>
 		<key>SDWebImage.bundle/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0EMrsFliR80/3ip0dZTLWsAVCHA=
-			</data>
 			<key>hash2</key>
 			<data>
-			0cUXTLgLRDgVWOMXTlMQuQ3CmORqOnwVGb7UOHuAcQw=
+			I+ryBNHGCTU0QEuLNi0OciA3giDpx6jzLYd1HFRwv0w=
 			</data>
 		</dict>
 		<key>SDWebImage.bundle/PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PFHYbs0V3eUFDWQyYQcwEetuqEk=
-			</data>
 			<key>hash2</key>
 			<data>
 			A7LHCDOjMaKx79Ef8WjtAqjq39Xn0fvzDuzHUJpK6kc=

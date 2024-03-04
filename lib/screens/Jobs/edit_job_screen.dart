@@ -22,7 +22,8 @@ class _EditJobScreenState extends State<EditJobScreen> {
   late TextEditingController locationController;
   late TextEditingController employmentTypeController;
   late TextEditingController salaryCompensationController;
-  late TextEditingController skillsQualificationsController;
+  List<String> requirements = []; // Initialized with existing job requirements
+  final TextEditingController requirementController = TextEditingController();
 
   @override
   void initState() {
@@ -37,10 +38,22 @@ class _EditJobScreenState extends State<EditJobScreen> {
         TextEditingController(text: widget.job.employmentType);
     salaryCompensationController =
         TextEditingController(text: widget.job.salaryCompensation);
-    skillsQualificationsController =
-        TextEditingController(text: widget.job.skillsQualifications);
+    requirements = List.from(widget.job.requirements);
+  }
+  void addRequirement() {
+    if (requirementController.text.isNotEmpty) {
+      setState(() {
+        requirements.add(requirementController.text);
+        requirementController.clear();
+      });
+    }
   }
 
+  void removeRequirement(int index) {
+    setState(() {
+      requirements.removeAt(index);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,8 +75,33 @@ class _EditJobScreenState extends State<EditJobScreen> {
               buildTextField('Employment Type', employmentTypeController),
               buildTextField(
                   'Salary Compensation', salaryCompensationController),
-              buildTextField(
-                  'Skills Qualifications', skillsQualificationsController),
+              Column(
+                children: [
+                  TextField(
+                    controller: requirementController,
+                    decoration: InputDecoration(
+                      labelText: "Add Requirement",
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: addRequirement,
+                      ),
+                    ),
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: requirements.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Text(requirements[index]),
+                        trailing: IconButton(
+                          icon: Icon(Icons.remove_circle_outline),
+                          onPressed: () => removeRequirement(index),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () async {
@@ -75,7 +113,7 @@ class _EditJobScreenState extends State<EditJobScreen> {
                     location: locationController.text,
                     employmentType: employmentTypeController.text,
                     salaryCompensation: salaryCompensationController.text,
-                    skillsQualifications: skillsQualificationsController.text,
+                    requirements: requirements,
                   );
 
                   await widget.jobService.editJob(updatedJob);

@@ -18,25 +18,26 @@ class User {
     required this.email,
     required this.token,
     required this.password,
-    required this.profilePicturePath,
-    required this.lastname,
-    required this.title,
-    required this.birthdate,
-    required this.role,
+    this.profilePicturePath = "",
+    this.lastname = "",
+    this.title = "",
+    this.birthdate = "",
+    this.role = "User",
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
+    Map<String, dynamic> userJson = json['user'] ?? {};
     return User(
-      id: json['user']['_id'] as String,
-      email: json['user']['email'] as String,
-      password: json['user']['password'] as String,
-      name: json['user']['name'] as String,
-      lastname: json['user']['lastname'] as String,
-      title: json['user']['title'] as String,
-      birthdate: json['user']['birthdate'] as String,
-      role: json['user']['role'] as String,
-      profilePicturePath: json['user']['profile_picture'] as String,
-      token: json['token'] ?? '' ,
+      id: userJson['_id'] ?? '',
+      email: userJson['email'] ?? '',
+      password: userJson['password'] ?? '',
+      name: userJson['name'] ?? '',
+      lastname: userJson['lastname'] ?? '',
+      title: userJson['title'] ?? "",
+      birthdate: userJson['birthdate'] ?? "",
+      role: userJson['role'] ?? "User",
+      profilePicturePath: userJson['profile_picture'] ?? "",
+      token: json['token'] ?? '',
     );
   }
 

@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:airecruit/widgets/skill_widget.dart';
+import 'package:airecruit/screens/JobSeeker/Profile/widgets/resume_widget.dart';
+import 'package:airecruit/screens/JobSeeker/Profile/widgets/skill_widget.dart';
+import 'package:airecruit/screens/JobSeeker/Profile/widgets/social_medialink_widget.dart';
+import 'package:airecruit/services/Auth.dart';
+
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -13,9 +15,7 @@ import '../../../providers/userprovider.dart';
 import '../../../services/FileManager.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/globalColors.dart';
-import '../../../widgets/resume_widget.dart';
-import '../../../widgets/social_medialink_widget.dart';
-import '../../../widgets/work_experience_widget.dart';
+
 import 'edit_profile_page.dart';
 import 'package:http/http.dart' as http;
 
@@ -37,19 +37,10 @@ Future<List<String>> fetchFilesList() async {
 
 class _ProfileScreen1State extends State<ProfileScreen1> {
   File? _image;
-  final ImagePicker _picker = ImagePicker();
   late Future<List<String>> filesList;
   FileManager fileManager = FileManager();
-  Future<void> _uploadResume() async {
-    await fileManager.uploadFileToBackend();
-  }
-
-  Future<void> _pickImage() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _image = pickedFile != null ? File(pickedFile.path) : null;
-    });
-  }
+  AuthService auth = AuthService();
+  
 
   @override
   void initState() {
@@ -60,6 +51,7 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context).user;
+
     List<Map<String, dynamic>> skills = [
       {'name': 'PHP', 'percentage': 86.0},
       {'name': 'Java', 'percentage': 48.0},
@@ -94,18 +86,16 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
               width: 40,
               height: 40,
             ),
-            SizedBox(width: 10),
-            Text(
+            const SizedBox(width: 10),
+            const Text(
               'My Profile',
               style: TextStyle(
                   fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
             ),
-
           ],
         ),
       ),
       body: SingleChildScrollView(
-
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
@@ -116,30 +106,30 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                 backgroundColor: GlobalColors.buttonColor,
                 backgroundImage: user.profilePicturePath.isNotEmpty
                     ? NetworkImage(user.profilePicturePath)
-                    : AssetImage('assets/default_profile.png') as ImageProvider,
+                    : const AssetImage('Assets/logo.png') as ImageProvider,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               user.name,
               style: Theme.of(context).textTheme.headline6,
             ),
             Text(user.email),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (_) => UpdateProfileScreen())),
+                  MaterialPageRoute(builder: (_) => const UpdateProfileScreen())),
               style: ElevatedButton.styleFrom(
                 primary: GlobalColors.buttonColor,
                 onPrimary: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
-                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              child: Text("Edit Your Profile"),
+              child: const Text("Edit Your Profile"),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ResumeSectionWidget(
               title: "Resumes",
               icon: LineAwesomeIcons.pdf_file,
@@ -150,14 +140,26 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
               icon: LineAwesomeIcons.star_1,
               skills: skills,
             ),
-           // WorkExperienceWidget(),
+            // WorkExperienceWidget(),
             SocialMediaLinksWidget(
               title: "Social Media Links",
               icon: LineAwesomeIcons.link,
               socialLinks: socialLinks,
-            )
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => auth.signOut(context),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.red,
+                onPrimary: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              child: const Text("Sign out"),
+            ),],
 
-          ],
         ),
       ),
     );

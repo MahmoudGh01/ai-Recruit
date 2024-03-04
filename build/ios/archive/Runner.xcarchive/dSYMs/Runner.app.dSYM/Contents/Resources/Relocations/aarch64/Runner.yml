@@ -1,0 +1,182 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mahmoudgharbi/Library/Developer/Xcode/DerivedData/Runner-euzxydgwcvbhydgflyrrogpmfjyj/Build/Intermediates.noindex/ArchiveIntermediates/Runner/InstallationBuildProductsLocation/Applications/Runner.app/Runner'
+relocations:
+  - { offsetInCU: 0x34, offset: 0x125CB7, size: 0x8, addend: 0x0, symName: _RunnerVersionString, symObjAddr: 0x0, symBinAddr: 0x10000F810, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x125CEC, size: 0x8, addend: 0x0, symName: _RunnerVersionNumber, symObjAddr: 0x28, symBinAddr: 0x10000F838, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0x125D29, size: 0x8, addend: 0x0, symName: '+[GeneratedPluginRegistrant registerWithRegistry:]', symObjAddr: 0x0, symBinAddr: 0x100008000, symSize: 0x1EC }
+  - { offsetInCU: 0x74, offset: 0x125D76, size: 0x8, addend: 0x0, symName: '+[GeneratedPluginRegistrant registerWithRegistry:]', symObjAddr: 0x0, symBinAddr: 0x100008000, symSize: 0x1EC }
+  - { offsetInCU: 0x81, offset: 0x125E66, size: 0x8, addend: 0x0, symName: '_$s6Runner11AppDelegateC11application_29didFinishLaunchingWithOptionsSbSo13UIApplicationC_SDySo0j6LaunchI3KeyaypGSgtFTo', symObjAddr: 0x0, symBinAddr: 0x1000081EC, symSize: 0x14C }
+  - { offsetInCU: 0xE6, offset: 0x125ECB, size: 0x8, addend: 0x0, symName: '_$s6Runner11AppDelegateCACycfcTo', symObjAddr: 0x14C, symBinAddr: 0x100008338, symSize: 0x3C }
+  - { offsetInCU: 0x121, offset: 0x125F06, size: 0x8, addend: 0x0, symName: '_$s6Runner11AppDelegateCfD', symObjAddr: 0x188, symBinAddr: 0x100008374, symSize: 0x30 }
+  - { offsetInCU: 0x14F, offset: 0x125F34, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1B8, symBinAddr: 0x1000083A4, symSize: 0x5C }
+  - { offsetInCU: 0x16D, offset: 0x125F52, size: 0x8, addend: 0x0, symName: '_$s6Runner11AppDelegateCMa', symObjAddr: 0x214, symBinAddr: 0x100008400, symSize: 0x20 }
+  - { offsetInCU: 0x181, offset: 0x125F66, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaMa', symObjAddr: 0x234, symBinAddr: 0x100008420, symSize: 0x54 }
+  - { offsetInCU: 0x1D7, offset: 0x125FBC, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas20_SwiftNewtypeWrapperSCSYWb', symObjAddr: 0x534, symBinAddr: 0x100008720, symSize: 0x24 }
+  - { offsetInCU: 0x1EB, offset: 0x125FD0, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas20_SwiftNewtypeWrapperSCs35_HasCustomAnyHashableRepresentationPWb', symObjAddr: 0x558, symBinAddr: 0x100008744, symSize: 0x24 }
+  - { offsetInCU: 0x1FF, offset: 0x125FE4, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSHSCSQWb', symObjAddr: 0x57C, symBinAddr: 0x100008768, symSize: 0x24 }
+  - { offsetInCU: 0x2D2, offset: 0x1260B7, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSHSCSH4hash4intoys6HasherVz_tFTW', symObjAddr: 0x294, symBinAddr: 0x100008480, symSize: 0x40 }
+  - { offsetInCU: 0x356, offset: 0x12613B, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSHSCSH13_rawHashValue4seedS2i_tFTW', symObjAddr: 0x2D4, symBinAddr: 0x1000084C0, symSize: 0x70 }
+  - { offsetInCU: 0x3E9, offset: 0x1261CE, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas21_ObjectiveCBridgeableSCsACP016_forceBridgeFromE1C_6resulty01_E5CTypeQz_xSgztFZTW', symObjAddr: 0x38C, symBinAddr: 0x100008578, symSize: 0x4 }
+  - { offsetInCU: 0x409, offset: 0x1261EE, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas21_ObjectiveCBridgeableSCsACP016_forceBridgeFromE1C_6resulty01_E5CTypeQz_xSgztFZTW', symObjAddr: 0x38C, symBinAddr: 0x100008578, symSize: 0x4 }
+  - { offsetInCU: 0x429, offset: 0x12620E, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas21_ObjectiveCBridgeableSCsACP024_conditionallyBridgeFromE1C_6resultSb01_E5CTypeQz_xSgztFZTW', symObjAddr: 0x390, symBinAddr: 0x10000857C, symSize: 0x4 }
+  - { offsetInCU: 0x449, offset: 0x12622E, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas21_ObjectiveCBridgeableSCsACP024_conditionallyBridgeFromE1C_6resultSb01_E5CTypeQz_xSgztFZTW', symObjAddr: 0x390, symBinAddr: 0x10000857C, symSize: 0x4 }
+  - { offsetInCU: 0x46F, offset: 0x126254, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas21_ObjectiveCBridgeableSCsACP026_unconditionallyBridgeFromE1Cyx01_E5CTypeQzSgFZTW', symObjAddr: 0x394, symBinAddr: 0x100008580, symSize: 0x40 }
+  - { offsetInCU: 0x4FC, offset: 0x1262E1, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSQSCSQ2eeoiySbx_xtFZTW', symObjAddr: 0x3D4, symBinAddr: 0x1000085C0, symSize: 0x88 }
+  - { offsetInCU: 0x57D, offset: 0x126362, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyas35_HasCustomAnyHashableRepresentationSCsACP03_tofgH0s0gH0VSgyFTW', symObjAddr: 0x4C8, symBinAddr: 0x1000086B4, symSize: 0x6C }
+  - { offsetInCU: 0x5A5, offset: 0x12638A, size: 0x8, addend: 0x0, symName: '_$ss20_SwiftNewtypeWrapperPss21_ObjectiveCBridgeable8RawValueRpzrlE016_forceBridgeFromD1C_6resultyAD_01_D5CTypeQZ_xSgztFZSo29UIApplicationLaunchOptionsKeya_Tgq5Tf4nnd_n', symObjAddr: 0x5A0, symBinAddr: 0x10000878C, symSize: 0x80 }
+  - { offsetInCU: 0x636, offset: 0x12641B, size: 0x8, addend: 0x0, symName: '_$ss20_SwiftNewtypeWrapperPss21_ObjectiveCBridgeable8RawValueRpzrlE024_conditionallyBridgeFromD1C_6resultSbAD_01_D5CTypeQZ_xSgztFZSo29UIApplicationLaunchOptionsKeya_Tgq5Tf4nnd_n', symObjAddr: 0x620, symBinAddr: 0x10000880C, symSize: 0x90 }
+  - { offsetInCU: 0x73F, offset: 0x126524, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSYSCSY8rawValuexSg03RawF0Qz_tcfCTW', symObjAddr: 0x45C, symBinAddr: 0x100008648, symSize: 0x44 }
+  - { offsetInCU: 0x768, offset: 0x12654D, size: 0x8, addend: 0x0, symName: '_$sSo29UIApplicationLaunchOptionsKeyaSYSCSY8rawValue03RawF0QzvgTW', symObjAddr: 0x4A0, symBinAddr: 0x10000868C, symSize: 0x28 }
+  - { offsetInCU: 0x2B, offset: 0x1266B1, size: 0x8, addend: 0x0, symName: '_$s6Runner19ResourceBundleClass33_7571A7321C8DCCC28D894D1A71659FA9LLCfD', symObjAddr: 0x0, symBinAddr: 0x1000088DC, symSize: 0x10 }
+  - { offsetInCU: 0x55, offset: 0x1266DB, size: 0x8, addend: 0x0, symName: '_$s6Runner19ResourceBundleClass33_7571A7321C8DCCC28D894D1A71659FA9LLCfD', symObjAddr: 0x0, symBinAddr: 0x1000088DC, symSize: 0x10 }
+  - { offsetInCU: 0x86, offset: 0x12670C, size: 0x8, addend: 0x0, symName: '_$s6Runner19ResourceBundleClass33_7571A7321C8DCCC28D894D1A71659FA9LLCMa', symObjAddr: 0x10, symBinAddr: 0x1000088EC, symSize: 0x20 }
+  - { offsetInCU: 0x27, offset: 0x126825, size: 0x8, addend: 0x0, symName: '+[FLTGoogleSignInPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x10000890C, symSize: 0x88 }
+  - { offsetInCU: 0x148, offset: 0x126946, size: 0x8, addend: 0x0, symName: '+[FLTGoogleSignInPlugin registerWithRegistrar:]', symObjAddr: 0x0, symBinAddr: 0x10000890C, symSize: 0x88 }
+  - { offsetInCU: 0x1CC, offset: 0x1269CA, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin initWithRegistrar:]', symObjAddr: 0x88, symBinAddr: 0x100008994, symSize: 0x74 }
+  - { offsetInCU: 0x22D, offset: 0x126A2B, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin initWithSignIn:registrar:]', symObjAddr: 0xFC, symBinAddr: 0x100008A08, symSize: 0xEC }
+  - { offsetInCU: 0x2A4, offset: 0x126AA2, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin initWithSignIn:registrar:googleServiceProperties:]', symObjAddr: 0x1E8, symBinAddr: 0x100008AF4, symSize: 0xFC }
+  - { offsetInCU: 0x33E, offset: 0x126B3C, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin application:openURL:options:]', symObjAddr: 0x2E4, symBinAddr: 0x100008BF0, symSize: 0x64 }
+  - { offsetInCU: 0x39D, offset: 0x126B9B, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin initializeSignInWithParameters:error:]', symObjAddr: 0x348, symBinAddr: 0x100008C54, symSize: 0x114 }
+  - { offsetInCU: 0x3FC, offset: 0x126BFA, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin signInSilentlyWithCompletion:]', symObjAddr: 0x45C, symBinAddr: 0x100008D68, symSize: 0xAC }
+  - { offsetInCU: 0x43F, offset: 0x126C3D, size: 0x8, addend: 0x0, symName: '___54-[FLTGoogleSignInPlugin signInSilentlyWithCompletion:]_block_invoke', symObjAddr: 0x508, symBinAddr: 0x100008E14, symSize: 0x18 }
+  - { offsetInCU: 0x4AE, offset: 0x126CAC, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40b, symObjAddr: 0x520, symBinAddr: 0x100008E2C, symSize: 0x34 }
+  - { offsetInCU: 0x4D7, offset: 0x126CD5, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s, symObjAddr: 0x554, symBinAddr: 0x100008E60, symSize: 0x28 }
+  - { offsetInCU: 0x4F6, offset: 0x126CF4, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin isSignedInWithError:]', symObjAddr: 0x57C, symBinAddr: 0x100008E88, symSize: 0x58 }
+  - { offsetInCU: 0x539, offset: 0x126D37, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin signInWithCompletion:]', symObjAddr: 0x5D4, symBinAddr: 0x100008EE0, symSize: 0x25C }
+  - { offsetInCU: 0x5B8, offset: 0x126DB6, size: 0x8, addend: 0x0, symName: '___46-[FLTGoogleSignInPlugin signInWithCompletion:]_block_invoke', symObjAddr: 0x830, symBinAddr: 0x10000913C, symSize: 0xA8 }
+  - { offsetInCU: 0x656, offset: 0x126E54, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin getAccessTokenWithCompletion:]', symObjAddr: 0x8D8, symBinAddr: 0x1000091E4, symSize: 0xC4 }
+  - { offsetInCU: 0x6A9, offset: 0x126EA7, size: 0x8, addend: 0x0, symName: '___54-[FLTGoogleSignInPlugin getAccessTokenWithCompletion:]_block_invoke', symObjAddr: 0x99C, symBinAddr: 0x1000092A8, symSize: 0x124 }
+  - { offsetInCU: 0x75C, offset: 0x126F5A, size: 0x8, addend: 0x0, symName: _getFlutterError, symObjAddr: 0xAC0, symBinAddr: 0x1000093CC, symSize: 0x118 }
+  - { offsetInCU: 0x797, offset: 0x126F95, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32b, symObjAddr: 0xBD8, symBinAddr: 0x1000094E4, symSize: 0x10 }
+  - { offsetInCU: 0x7C0, offset: 0x126FBE, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s, symObjAddr: 0xBE8, symBinAddr: 0x1000094F4, symSize: 0x8 }
+  - { offsetInCU: 0x7DF, offset: 0x126FDD, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin signOutWithError:]', symObjAddr: 0xBF0, symBinAddr: 0x1000094FC, symSize: 0x30 }
+  - { offsetInCU: 0x81E, offset: 0x12701C, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin disconnectWithCompletion:]', symObjAddr: 0xC20, symBinAddr: 0x10000952C, symSize: 0xA4 }
+  - { offsetInCU: 0x861, offset: 0x12705F, size: 0x8, addend: 0x0, symName: '___50-[FLTGoogleSignInPlugin disconnectWithCompletion:]_block_invoke', symObjAddr: 0xCC4, symBinAddr: 0x1000095D0, symSize: 0x10 }
+  - { offsetInCU: 0x8BB, offset: 0x1270B9, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin requestScopes:completion:]', symObjAddr: 0xCD4, symBinAddr: 0x1000095E0, symSize: 0x284 }
+  - { offsetInCU: 0x992, offset: 0x127190, size: 0x8, addend: 0x0, symName: '___50-[FLTGoogleSignInPlugin requestScopes:completion:]_block_invoke', symObjAddr: 0xF58, symBinAddr: 0x100009864, symSize: 0x200 }
+  - { offsetInCU: 0xA57, offset: 0x127255, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin signInWithHint:additionalScopes:completion:]', symObjAddr: 0x1158, symBinAddr: 0x100009A64, symSize: 0xBC }
+  - { offsetInCU: 0xABA, offset: 0x1272B8, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin addScopes:completion:]', symObjAddr: 0x1214, symBinAddr: 0x100009B20, symSize: 0xB8 }
+  - { offsetInCU: 0xB21, offset: 0x12731F, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin configurationWithClientIdentifier:serverClientIdentifier:hostedDomain:]', symObjAddr: 0x12CC, symBinAddr: 0x100009BD8, symSize: 0x144 }
+  - { offsetInCU: 0xBA6, offset: 0x1273A4, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin didSignInForUser:withServerAuthCode:completion:error:]', symObjAddr: 0x1410, symBinAddr: 0x100009D1C, symSize: 0x270 }
+  - { offsetInCU: 0xCA3, offset: 0x1274A1, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin topViewController]', symObjAddr: 0x1680, symBinAddr: 0x100009F8C, symSize: 0x90 }
+  - { offsetInCU: 0xCDB, offset: 0x1274D9, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin topViewControllerFromViewController:]', symObjAddr: 0x1710, symBinAddr: 0x10000A01C, symSize: 0x12C }
+  - { offsetInCU: 0xD5C, offset: 0x12755A, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin googleServiceProperties]', symObjAddr: 0x183C, symBinAddr: 0x10000A148, symSize: 0xC }
+  - { offsetInCU: 0xD93, offset: 0x127591, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin setGoogleServiceProperties:]', symObjAddr: 0x1848, symBinAddr: 0x10000A154, symSize: 0x8 }
+  - { offsetInCU: 0xDD2, offset: 0x1275D0, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin registrar]', symObjAddr: 0x1850, symBinAddr: 0x10000A15C, symSize: 0xC }
+  - { offsetInCU: 0xE09, offset: 0x127607, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin setRegistrar:]', symObjAddr: 0x185C, symBinAddr: 0x10000A168, symSize: 0x8 }
+  - { offsetInCU: 0xE48, offset: 0x127646, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin configuration]', symObjAddr: 0x1864, symBinAddr: 0x10000A170, symSize: 0xC }
+  - { offsetInCU: 0xE7F, offset: 0x12767D, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin setConfiguration:]', symObjAddr: 0x1870, symBinAddr: 0x10000A17C, symSize: 0x8 }
+  - { offsetInCU: 0xEBE, offset: 0x1276BC, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin requestedScopes]', symObjAddr: 0x1878, symBinAddr: 0x10000A184, symSize: 0xC }
+  - { offsetInCU: 0xEF5, offset: 0x1276F3, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin setRequestedScopes:]', symObjAddr: 0x1884, symBinAddr: 0x10000A190, symSize: 0x8 }
+  - { offsetInCU: 0xF34, offset: 0x127732, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin signIn]', symObjAddr: 0x188C, symBinAddr: 0x10000A198, symSize: 0xC }
+  - { offsetInCU: 0xF6B, offset: 0x127769, size: 0x8, addend: 0x0, symName: '-[FLTGoogleSignInPlugin .cxx_destruct]', symObjAddr: 0x1898, symBinAddr: 0x10000A1A4, symSize: 0x54 }
+  - { offsetInCU: 0x27, offset: 0x127D0E, size: 0x8, addend: 0x0, symName: '+[FSIInitParams makeWithScopes:hostedDomain:clientId:serverClientId:]', symObjAddr: 0x0, symBinAddr: 0x10000A1F8, symSize: 0xCC }
+  - { offsetInCU: 0x35, offset: 0x127D1C, size: 0x8, addend: 0x0, symName: _FSIGoogleSignInApiGetCodec, symObjAddr: 0xF74, symBinAddr: 0x10000B16C, symSize: 0x40 }
+  - { offsetInCU: 0x5B, offset: 0x127D42, size: 0x8, addend: 0x0, symName: _FSIGoogleSignInApiGetCodec.sSharedObject, symObjAddr: 0xB380, symBinAddr: 0x100019140, symSize: 0x0 }
+  - { offsetInCU: 0x71, offset: 0x127D58, size: 0x8, addend: 0x0, symName: _FSIGoogleSignInApiGetCodec.sPred, symObjAddr: 0xB388, symBinAddr: 0x100019148, symSize: 0x0 }
+  - { offsetInCU: 0x260, offset: 0x127F47, size: 0x8, addend: 0x0, symName: '+[FSIInitParams makeWithScopes:hostedDomain:clientId:serverClientId:]', symObjAddr: 0x0, symBinAddr: 0x10000A1F8, symSize: 0xCC }
+  - { offsetInCU: 0x2E3, offset: 0x127FCA, size: 0x8, addend: 0x0, symName: '+[FSIInitParams fromList:]', symObjAddr: 0xCC, symBinAddr: 0x10000A2C4, symSize: 0x100 }
+  - { offsetInCU: 0x3A6, offset: 0x12808D, size: 0x8, addend: 0x0, symName: _GetNullableObjectAtIndex, symObjAddr: 0x1CC, symBinAddr: 0x10000A3C4, symSize: 0x70 }
+  - { offsetInCU: 0x3F1, offset: 0x1280D8, size: 0x8, addend: 0x0, symName: '+[FSIInitParams nullableFromList:]', symObjAddr: 0x23C, symBinAddr: 0x10000A434, symSize: 0x30 }
+  - { offsetInCU: 0x434, offset: 0x12811B, size: 0x8, addend: 0x0, symName: '-[FSIInitParams toList]', symObjAddr: 0x26C, symBinAddr: 0x10000A464, symSize: 0x1C0 }
+  - { offsetInCU: 0x46B, offset: 0x128152, size: 0x8, addend: 0x0, symName: '-[FSIInitParams scopes]', symObjAddr: 0x42C, symBinAddr: 0x10000A624, symSize: 0x8 }
+  - { offsetInCU: 0x4A2, offset: 0x128189, size: 0x8, addend: 0x0, symName: '-[FSIInitParams setScopes:]', symObjAddr: 0x434, symBinAddr: 0x10000A62C, symSize: 0xC }
+  - { offsetInCU: 0x4E3, offset: 0x1281CA, size: 0x8, addend: 0x0, symName: '-[FSIInitParams hostedDomain]', symObjAddr: 0x440, symBinAddr: 0x10000A638, symSize: 0x8 }
+  - { offsetInCU: 0x51A, offset: 0x128201, size: 0x8, addend: 0x0, symName: '-[FSIInitParams setHostedDomain:]', symObjAddr: 0x448, symBinAddr: 0x10000A640, symSize: 0x8 }
+  - { offsetInCU: 0x559, offset: 0x128240, size: 0x8, addend: 0x0, symName: '-[FSIInitParams clientId]', symObjAddr: 0x450, symBinAddr: 0x10000A648, symSize: 0x8 }
+  - { offsetInCU: 0x590, offset: 0x128277, size: 0x8, addend: 0x0, symName: '-[FSIInitParams setClientId:]', symObjAddr: 0x458, symBinAddr: 0x10000A650, symSize: 0x8 }
+  - { offsetInCU: 0x5CF, offset: 0x1282B6, size: 0x8, addend: 0x0, symName: '-[FSIInitParams serverClientId]', symObjAddr: 0x460, symBinAddr: 0x10000A658, symSize: 0x8 }
+  - { offsetInCU: 0x606, offset: 0x1282ED, size: 0x8, addend: 0x0, symName: '-[FSIInitParams setServerClientId:]', symObjAddr: 0x468, symBinAddr: 0x10000A660, symSize: 0x8 }
+  - { offsetInCU: 0x645, offset: 0x12832C, size: 0x8, addend: 0x0, symName: '-[FSIInitParams .cxx_destruct]', symObjAddr: 0x470, symBinAddr: 0x10000A668, symSize: 0x48 }
+  - { offsetInCU: 0x678, offset: 0x12835F, size: 0x8, addend: 0x0, symName: '+[FSIUserData makeWithDisplayName:email:userId:photoUrl:serverAuthCode:idToken:]', symObjAddr: 0x4B8, symBinAddr: 0x10000A6B0, symSize: 0x11C }
+  - { offsetInCU: 0x71B, offset: 0x128402, size: 0x8, addend: 0x0, symName: '+[FSIUserData fromList:]', symObjAddr: 0x5D4, symBinAddr: 0x10000A7CC, symSize: 0x158 }
+  - { offsetInCU: 0x816, offset: 0x1284FD, size: 0x8, addend: 0x0, symName: '+[FSIUserData nullableFromList:]', symObjAddr: 0x72C, symBinAddr: 0x10000A924, symSize: 0x30 }
+  - { offsetInCU: 0x859, offset: 0x128540, size: 0x8, addend: 0x0, symName: '-[FSIUserData toList]', symObjAddr: 0x75C, symBinAddr: 0x10000A954, symSize: 0x248 }
+  - { offsetInCU: 0x890, offset: 0x128577, size: 0x8, addend: 0x0, symName: '-[FSIUserData displayName]', symObjAddr: 0x9A4, symBinAddr: 0x10000AB9C, symSize: 0x8 }
+  - { offsetInCU: 0x8C7, offset: 0x1285AE, size: 0x8, addend: 0x0, symName: '-[FSIUserData setDisplayName:]', symObjAddr: 0x9AC, symBinAddr: 0x10000ABA4, symSize: 0x8 }
+  - { offsetInCU: 0x906, offset: 0x1285ED, size: 0x8, addend: 0x0, symName: '-[FSIUserData email]', symObjAddr: 0x9B4, symBinAddr: 0x10000ABAC, symSize: 0x8 }
+  - { offsetInCU: 0x93D, offset: 0x128624, size: 0x8, addend: 0x0, symName: '-[FSIUserData setEmail:]', symObjAddr: 0x9BC, symBinAddr: 0x10000ABB4, symSize: 0x8 }
+  - { offsetInCU: 0x97C, offset: 0x128663, size: 0x8, addend: 0x0, symName: '-[FSIUserData userId]', symObjAddr: 0x9C4, symBinAddr: 0x10000ABBC, symSize: 0x8 }
+  - { offsetInCU: 0x9B3, offset: 0x12869A, size: 0x8, addend: 0x0, symName: '-[FSIUserData setUserId:]', symObjAddr: 0x9CC, symBinAddr: 0x10000ABC4, symSize: 0x8 }
+  - { offsetInCU: 0x9F2, offset: 0x1286D9, size: 0x8, addend: 0x0, symName: '-[FSIUserData photoUrl]', symObjAddr: 0x9D4, symBinAddr: 0x10000ABCC, symSize: 0x8 }
+  - { offsetInCU: 0xA29, offset: 0x128710, size: 0x8, addend: 0x0, symName: '-[FSIUserData setPhotoUrl:]', symObjAddr: 0x9DC, symBinAddr: 0x10000ABD4, symSize: 0x8 }
+  - { offsetInCU: 0xA68, offset: 0x12874F, size: 0x8, addend: 0x0, symName: '-[FSIUserData serverAuthCode]', symObjAddr: 0x9E4, symBinAddr: 0x10000ABDC, symSize: 0x8 }
+  - { offsetInCU: 0xA9F, offset: 0x128786, size: 0x8, addend: 0x0, symName: '-[FSIUserData setServerAuthCode:]', symObjAddr: 0x9EC, symBinAddr: 0x10000ABE4, symSize: 0x8 }
+  - { offsetInCU: 0xADE, offset: 0x1287C5, size: 0x8, addend: 0x0, symName: '-[FSIUserData idToken]', symObjAddr: 0x9F4, symBinAddr: 0x10000ABEC, symSize: 0x8 }
+  - { offsetInCU: 0xB15, offset: 0x1287FC, size: 0x8, addend: 0x0, symName: '-[FSIUserData setIdToken:]', symObjAddr: 0x9FC, symBinAddr: 0x10000ABF4, symSize: 0x8 }
+  - { offsetInCU: 0xB54, offset: 0x12883B, size: 0x8, addend: 0x0, symName: '-[FSIUserData .cxx_destruct]', symObjAddr: 0xA04, symBinAddr: 0x10000ABFC, symSize: 0x60 }
+  - { offsetInCU: 0xB87, offset: 0x12886E, size: 0x8, addend: 0x0, symName: '+[FSITokenData makeWithIdToken:accessToken:]', symObjAddr: 0xA64, symBinAddr: 0x10000AC5C, symSize: 0x7C }
+  - { offsetInCU: 0xBEA, offset: 0x1288D1, size: 0x8, addend: 0x0, symName: '+[FSITokenData fromList:]', symObjAddr: 0xAE0, symBinAddr: 0x10000ACD8, symSize: 0xA8 }
+  - { offsetInCU: 0xC75, offset: 0x12895C, size: 0x8, addend: 0x0, symName: '+[FSITokenData nullableFromList:]', symObjAddr: 0xB88, symBinAddr: 0x10000AD80, symSize: 0x30 }
+  - { offsetInCU: 0xCB8, offset: 0x12899F, size: 0x8, addend: 0x0, symName: '-[FSITokenData toList]', symObjAddr: 0xBB8, symBinAddr: 0x10000ADB0, symSize: 0x118 }
+  - { offsetInCU: 0xCEF, offset: 0x1289D6, size: 0x8, addend: 0x0, symName: '-[FSITokenData idToken]', symObjAddr: 0xCD0, symBinAddr: 0x10000AEC8, symSize: 0x8 }
+  - { offsetInCU: 0xD26, offset: 0x128A0D, size: 0x8, addend: 0x0, symName: '-[FSITokenData setIdToken:]', symObjAddr: 0xCD8, symBinAddr: 0x10000AED0, symSize: 0x8 }
+  - { offsetInCU: 0xD65, offset: 0x128A4C, size: 0x8, addend: 0x0, symName: '-[FSITokenData accessToken]', symObjAddr: 0xCE0, symBinAddr: 0x10000AED8, symSize: 0x8 }
+  - { offsetInCU: 0xD9C, offset: 0x128A83, size: 0x8, addend: 0x0, symName: '-[FSITokenData setAccessToken:]', symObjAddr: 0xCE8, symBinAddr: 0x10000AEE0, symSize: 0x8 }
+  - { offsetInCU: 0xDDB, offset: 0x128AC2, size: 0x8, addend: 0x0, symName: '-[FSITokenData .cxx_destruct]', symObjAddr: 0xCF0, symBinAddr: 0x10000AEE8, symSize: 0x30 }
+  - { offsetInCU: 0xE0E, offset: 0x128AF5, size: 0x8, addend: 0x0, symName: '-[FSIGoogleSignInApiCodecReader readValueOfType:]', symObjAddr: 0xD20, symBinAddr: 0x10000AF18, symSize: 0xB8 }
+  - { offsetInCU: 0xE55, offset: 0x128B3C, size: 0x8, addend: 0x0, symName: '-[FSIGoogleSignInApiCodecWriter writeValue:]', symObjAddr: 0xDD8, symBinAddr: 0x10000AFD0, symSize: 0x104 }
+  - { offsetInCU: 0xE98, offset: 0x128B7F, size: 0x8, addend: 0x0, symName: '-[FSIGoogleSignInApiCodecReaderWriter writerWithData:]', symObjAddr: 0xEDC, symBinAddr: 0x10000B0D4, symSize: 0x4C }
+  - { offsetInCU: 0xEDB, offset: 0x128BC2, size: 0x8, addend: 0x0, symName: '-[FSIGoogleSignInApiCodecReaderWriter readerWithData:]', symObjAddr: 0xF28, symBinAddr: 0x10000B120, symSize: 0x4C }
+  - { offsetInCU: 0xF6D, offset: 0x128C54, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiGetCodec_block_invoke, symObjAddr: 0xFB4, symBinAddr: 0x10000B1AC, symSize: 0x5C }
+  - { offsetInCU: 0xFB3, offset: 0x128C9A, size: 0x8, addend: 0x0, symName: _FSIGoogleSignInApiSetup, symObjAddr: 0x1010, symBinAddr: 0x10000B208, symSize: 0x520 }
+  - { offsetInCU: 0x1158, offset: 0x128E3F, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke, symObjAddr: 0x1530, symBinAddr: 0x10000B728, symSize: 0xD8 }
+  - { offsetInCU: 0x1241, offset: 0x128F28, size: 0x8, addend: 0x0, symName: _wrapResult, symObjAddr: 0x1608, symBinAddr: 0x10000B800, symSize: 0x1EC }
+  - { offsetInCU: 0x127C, offset: 0x128F63, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s, symObjAddr: 0x17F4, symBinAddr: 0x10000B9EC, symSize: 0x8 }
+  - { offsetInCU: 0x12A3, offset: 0x128F8A, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke.97, symObjAddr: 0x1804, symBinAddr: 0x10000B9F4, symSize: 0x84 }
+  - { offsetInCU: 0x12FA, offset: 0x128FE1, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_2, symObjAddr: 0x1888, symBinAddr: 0x10000BA78, symSize: 0x48 }
+  - { offsetInCU: 0x138F, offset: 0x129076, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke.101, symObjAddr: 0x18E0, symBinAddr: 0x10000BAC0, symSize: 0x84 }
+  - { offsetInCU: 0x13EA, offset: 0x1290D1, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_2.102, symObjAddr: 0x1964, symBinAddr: 0x10000BB44, symSize: 0x48 }
+  - { offsetInCU: 0x1484, offset: 0x12916B, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_3, symObjAddr: 0x19AC, symBinAddr: 0x10000BB8C, symSize: 0x84 }
+  - { offsetInCU: 0x14DF, offset: 0x1291C6, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_4, symObjAddr: 0x1A30, symBinAddr: 0x10000BC10, symSize: 0x48 }
+  - { offsetInCU: 0x1579, offset: 0x129260, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke.108, symObjAddr: 0x1A78, symBinAddr: 0x10000BC58, symSize: 0x94 }
+  - { offsetInCU: 0x162B, offset: 0x129312, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_2.111, symObjAddr: 0x1B0C, symBinAddr: 0x10000BCEC, symSize: 0x84 }
+  - { offsetInCU: 0x1686, offset: 0x12936D, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_3.112, symObjAddr: 0x1B90, symBinAddr: 0x10000BD70, symSize: 0x44 }
+  - { offsetInCU: 0x170D, offset: 0x1293F4, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke.116, symObjAddr: 0x1BD4, symBinAddr: 0x10000BDB4, symSize: 0xA8 }
+  - { offsetInCU: 0x17D1, offset: 0x1294B8, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_2.119, symObjAddr: 0x1C7C, symBinAddr: 0x10000BE5C, symSize: 0xBC }
+  - { offsetInCU: 0x187D, offset: 0x129564, size: 0x8, addend: 0x0, symName: ___FSIGoogleSignInApiSetup_block_invoke_3.120, symObjAddr: 0x1D38, symBinAddr: 0x10000BF18, symSize: 0x48 }
+  - { offsetInCU: 0x27, offset: 0x129D16, size: 0x8, addend: 0x0, symName: '+[Codec decodePermissionGroupFrom:]', symObjAddr: 0x0, symBinAddr: 0x10000BF60, symSize: 0x8 }
+  - { offsetInCU: 0x191, offset: 0x129E80, size: 0x8, addend: 0x0, symName: '+[Codec decodePermissionGroupFrom:]', symObjAddr: 0x0, symBinAddr: 0x10000BF60, symSize: 0x8 }
+  - { offsetInCU: 0x1D4, offset: 0x129EC3, size: 0x8, addend: 0x0, symName: '+[Codec decodePermissionGroupsFrom:]', symObjAddr: 0x8, symBinAddr: 0x10000BF68, symSize: 0x184 }
+  - { offsetInCU: 0x24A, offset: 0x129F39, size: 0x8, addend: 0x0, symName: '+[Codec encodePermissionStatus:]', symObjAddr: 0x18C, symBinAddr: 0x10000C0EC, symSize: 0x30 }
+  - { offsetInCU: 0x28D, offset: 0x129F7C, size: 0x8, addend: 0x0, symName: '+[Codec encodeServiceStatus:]', symObjAddr: 0x1BC, symBinAddr: 0x10000C11C, symSize: 0x30 }
+  - { offsetInCU: 0x27, offset: 0x12A025, size: 0x8, addend: 0x0, symName: '-[PermissionHandlerPlugin initWithPermissionManager:]', symObjAddr: 0x0, symBinAddr: 0x10000C14C, symSize: 0x78 }
+  - { offsetInCU: 0x207, offset: 0x12A205, size: 0x8, addend: 0x0, symName: '-[PermissionHandlerPlugin initWithPermissionManager:]', symObjAddr: 0x0, symBinAddr: 0x10000C14C, symSize: 0x78 }
+  - { offsetInCU: 0x24E, offset: 0x12A24C, size: 0x8, addend: 0x0, symName: '+[PermissionHandlerPlugin registerWithRegistrar:]', symObjAddr: 0x78, symBinAddr: 0x10000C1C4, symSize: 0xC4 }
+  - { offsetInCU: 0x2BD, offset: 0x12A2BB, size: 0x8, addend: 0x0, symName: '-[PermissionHandlerPlugin handleMethodCall:result:]', symObjAddr: 0x13C, symBinAddr: 0x10000C288, symSize: 0x330 }
+  - { offsetInCU: 0x394, offset: 0x12A392, size: 0x8, addend: 0x0, symName: '___51-[PermissionHandlerPlugin handleMethodCall:result:]_block_invoke', symObjAddr: 0x46C, symBinAddr: 0x10000C5B8, symSize: 0x3C }
+  - { offsetInCU: 0x3EF, offset: 0x12A3ED, size: 0x8, addend: 0x0, symName: '-[PermissionHandlerPlugin .cxx_destruct]', symObjAddr: 0x4B8, symBinAddr: 0x10000C5F4, symSize: 0x30 }
+  - { offsetInCU: 0x27, offset: 0x12A544, size: 0x8, addend: 0x0, symName: '-[PermissionManager initWithStrategyInstances]', symObjAddr: 0x0, symBinAddr: 0x10000C624, symSize: 0x80 }
+  - { offsetInCU: 0x232, offset: 0x12A74F, size: 0x8, addend: 0x0, symName: '-[PermissionManager initWithStrategyInstances]', symObjAddr: 0x0, symBinAddr: 0x10000C624, symSize: 0x80 }
+  - { offsetInCU: 0x269, offset: 0x12A786, size: 0x8, addend: 0x0, symName: '+[PermissionManager checkPermissionStatus:result:]', symObjAddr: 0x80, symBinAddr: 0x10000C6A4, symSize: 0x98 }
+  - { offsetInCU: 0x2F3, offset: 0x12A810, size: 0x8, addend: 0x0, symName: '+[PermissionManager checkServiceStatus:result:]', symObjAddr: 0x118, symBinAddr: 0x10000C73C, symSize: 0x10C }
+  - { offsetInCU: 0x356, offset: 0x12A873, size: 0x8, addend: 0x0, symName: ___Block_byref_object_copy_, symObjAddr: 0x224, symBinAddr: 0x10000C848, symSize: 0x10 }
+  - { offsetInCU: 0x37B, offset: 0x12A898, size: 0x8, addend: 0x0, symName: ___Block_byref_object_dispose_, symObjAddr: 0x234, symBinAddr: 0x10000C858, symSize: 0x8 }
+  - { offsetInCU: 0x39A, offset: 0x12A8B7, size: 0x8, addend: 0x0, symName: '___47+[PermissionManager checkServiceStatus:result:]_block_invoke', symObjAddr: 0x23C, symBinAddr: 0x10000C860, symSize: 0x6C }
+  - { offsetInCU: 0x410, offset: 0x12A92D, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32b40r, symObjAddr: 0x2A8, symBinAddr: 0x10000C8CC, symSize: 0x3C }
+  - { offsetInCU: 0x439, offset: 0x12A956, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40r, symObjAddr: 0x2E4, symBinAddr: 0x10000C908, symSize: 0x2C }
+  - { offsetInCU: 0x458, offset: 0x12A975, size: 0x8, addend: 0x0, symName: '-[PermissionManager requestPermissions:completion:]', symObjAddr: 0x310, symBinAddr: 0x10000C934, symSize: 0x228 }
+  - { offsetInCU: 0x551, offset: 0x12AA6E, size: 0x8, addend: 0x0, symName: '___51-[PermissionManager requestPermissions:completion:]_block_invoke', symObjAddr: 0x538, symBinAddr: 0x10000CB5C, symSize: 0xF8 }
+  - { offsetInCU: 0x5FC, offset: 0x12AB19, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40s48s56b64r, symObjAddr: 0x630, symBinAddr: 0x10000CC54, symSize: 0x54 }
+  - { offsetInCU: 0x625, offset: 0x12AB42, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s48s56s64r, symObjAddr: 0x684, symBinAddr: 0x10000CCA8, symSize: 0x44 }
+  - { offsetInCU: 0x644, offset: 0x12AB61, size: 0x8, addend: 0x0, symName: '+[PermissionManager openAppSettings:]', symObjAddr: 0x6C8, symBinAddr: 0x10000CCEC, symSize: 0xFC }
+  - { offsetInCU: 0x683, offset: 0x12ABA0, size: 0x8, addend: 0x0, symName: '___37+[PermissionManager openAppSettings:]_block_invoke', symObjAddr: 0x7C4, symBinAddr: 0x10000CDE8, symSize: 0x4C }
+  - { offsetInCU: 0x6E9, offset: 0x12AC06, size: 0x8, addend: 0x0, symName: '+[PermissionManager createPermissionStrategy:]', symObjAddr: 0x828, symBinAddr: 0x10000CE34, symSize: 0x38 }
+  - { offsetInCU: 0x72C, offset: 0x12AC49, size: 0x8, addend: 0x0, symName: '-[PermissionManager .cxx_destruct]', symObjAddr: 0x860, symBinAddr: 0x10000CE6C, symSize: 0xC }
+  - { offsetInCU: 0x27, offset: 0x12AFC3, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000CE78, symSize: 0x8 }
+  - { offsetInCU: 0x1A5, offset: 0x12B141, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000CE78, symSize: 0x8 }
+  - { offsetInCU: 0x1E4, offset: 0x12B180, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy checkServiceStatus:completionHandler:]', symObjAddr: 0x8, symBinAddr: 0x10000CE80, symSize: 0xC0 }
+  - { offsetInCU: 0x261, offset: 0x12B1FD, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy requestPermission:completionHandler:]', symObjAddr: 0xC8, symBinAddr: 0x10000CF40, symSize: 0x10 }
+  - { offsetInCU: 0x2C7, offset: 0x12B263, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy canDevicePlaceAPhoneCall]', symObjAddr: 0xD8, symBinAddr: 0x10000CF50, symSize: 0x168 }
+  - { offsetInCU: 0x363, offset: 0x12B2FF, size: 0x8, addend: 0x0, symName: '-[PhonePermissionStrategy canPlacePhoneCallWithCarrier:]', symObjAddr: 0x240, symBinAddr: 0x10000D0B8, symSize: 0x5C }
+  - { offsetInCU: 0x27, offset: 0x12B4A3, size: 0x8, addend: 0x0, symName: '-[StoragePermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000D114, symSize: 0xC }
+  - { offsetInCU: 0x197, offset: 0x12B613, size: 0x8, addend: 0x0, symName: '-[StoragePermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000D114, symSize: 0xC }
+  - { offsetInCU: 0x1D6, offset: 0x12B652, size: 0x8, addend: 0x0, symName: '-[StoragePermissionStrategy checkServiceStatus:completionHandler:]', symObjAddr: 0xC, symBinAddr: 0x10000D120, symSize: 0x10 }
+  - { offsetInCU: 0x23C, offset: 0x12B6B8, size: 0x8, addend: 0x0, symName: '-[StoragePermissionStrategy requestPermission:completionHandler:]', symObjAddr: 0x1C, symBinAddr: 0x10000D130, symSize: 0x54 }
+  - { offsetInCU: 0x29B, offset: 0x12B717, size: 0x8, addend: 0x0, symName: '+[StoragePermissionStrategy permissionStatus]', symObjAddr: 0x70, symBinAddr: 0x10000D184, symSize: 0x8 }
+  - { offsetInCU: 0x27, offset: 0x12B893, size: 0x8, addend: 0x0, symName: '-[UnknownPermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000D18C, symSize: 0x8 }
+  - { offsetInCU: 0x197, offset: 0x12BA03, size: 0x8, addend: 0x0, symName: '-[UnknownPermissionStrategy checkPermissionStatus:]', symObjAddr: 0x0, symBinAddr: 0x10000D18C, symSize: 0x8 }
+  - { offsetInCU: 0x1D6, offset: 0x12BA42, size: 0x8, addend: 0x0, symName: '-[UnknownPermissionStrategy checkServiceStatus:completionHandler:]', symObjAddr: 0x8, symBinAddr: 0x10000D194, symSize: 0x10 }
+  - { offsetInCU: 0x23C, offset: 0x12BAA8, size: 0x8, addend: 0x0, symName: '-[UnknownPermissionStrategy requestPermission:completionHandler:]', symObjAddr: 0x18, symBinAddr: 0x10000D1A4, symSize: 0x10 }
+...

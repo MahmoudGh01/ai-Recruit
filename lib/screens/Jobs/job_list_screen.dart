@@ -22,6 +22,8 @@ class _JobListScreenState extends State<JobListScreen> {
   void initState() {
     super.initState();
     _searchController.addListener(_onSearchChanged);
+
+
   }
 
   @override
@@ -46,6 +48,7 @@ class _JobListScreenState extends State<JobListScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -100,6 +103,12 @@ class _JobListScreenState extends State<JobListScreen> {
                     separatorBuilder: (context, index) => SizedBox(height: 20),
                     itemBuilder: (context, index) {
                       JobModel job = _filteredJobs[index];
+                      // Adjusted to handle job requirements correctly
+                      List<Widget> requirementTags = job.requirements.map((requirement) {
+                        // Directly use `requirement` as it's already a String
+                        return _tag(requirement);
+                      }).toList();
+
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -115,7 +124,7 @@ class _JobListScreenState extends State<JobListScreen> {
                             width: 320,
                             borderRadius: 20,
                             imageProvider: AssetImage('Assets/logo-google.jpeg'),
-                            tags: [_tag(job.skillsQualifications)],
+                            tags: requirementTags, // Use the adjusted list of tags here
                             title: _title(job.jobTitle, color: GlobalColors.secondaryColor),
                             description: _content(job.companyInformation, color: Colors.black54),
                           ),
@@ -126,7 +135,8 @@ class _JobListScreenState extends State<JobListScreen> {
                 }
               },
             ),
-          ),
+          )
+
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -153,15 +163,14 @@ class _JobListScreenState extends State<JobListScreen> {
         text,
         style: TextStyle(
           color: Colors.white,
-
-          //fontWeight: FontWeight.w900, // Slightly less bold than FontWeight.bold for a more refined look
           fontSize: 20, // Slightly larger for emphasis
           letterSpacing: 0.5, // Add some spacing between letters for better readability
-          fontFamily: 'Roboto', // Example: Use a specific font family (ensure it's included in your pubspec.yaml)
+          fontFamily: 'Roboto', // Use a specific font family (ensure it's included in your pubspec.yaml)
         ),
       ),
     );
   }
+
 
 
 

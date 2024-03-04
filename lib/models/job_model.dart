@@ -8,7 +8,7 @@ class JobModel {
   final String location;
   final String employmentType;
   final String salaryCompensation;
-  final String skillsQualifications;
+  final List<String> requirements;
 
   JobModel({
     required this.id,
@@ -18,22 +18,24 @@ class JobModel {
     required this.location,
     required this.employmentType,
     required this.salaryCompensation,
-    required this.skillsQualifications,
+    required this.requirements,
   });
 
   factory JobModel.fromJson(Map<String, dynamic> json) {
     return JobModel(
       id: json['_id'],
-      jobTitle: json['job_title'],
-      jobDescription: json['job_description'],
+      jobTitle: json['jobTitle'],
+      jobDescription: json['description'],
       companyInformation: json['company_information'],
       location: json['location'],
       employmentType: json['employment_type'],
       salaryCompensation: json['salary_compensation'],
-      skillsQualifications: json['skills_qualifications'],
-
+      requirements: json['requirements'] != null
+          ? List<String>.from(json['requirements'].map((req) => req['name']))
+          : [],
     );
   }
+
 
   Map<String, dynamic> toJson() {
     return {
@@ -44,7 +46,7 @@ class JobModel {
       'location': location,
       'employment_type': employmentType,
       'salary_compensation': salaryCompensation,
-      'skills_qualifications': skillsQualifications,
+      'skills_qualifications': requirements,
     };
   }
 }

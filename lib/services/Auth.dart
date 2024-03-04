@@ -21,32 +21,28 @@ class AuthService {
     required String email,
     required String name,
     required String password,
-    required File imageFile, // Ensure this is the File from dart:io
   }) async {
     try {
       Uri uri = Uri.parse('${Constants.uri}/signup');
-      http.MultipartRequest request = http.MultipartRequest('POST', uri)
-        ..fields['email'] = email
-        ..fields['name'] = name
-        ..fields['password'] = password
-        ..files.add(await http.MultipartFile.fromPath(
-          'file',
-          imageFile.path,
-          contentType:
-              MediaType('file', basename(imageFile.path).split('.').last),
-        ));
+      http.Response res = await http.post(
+        uri,
+        body: jsonEncode({'email': email, 'password': password, 'name': name}),
+        headers: <String, String>{
+          'Content-Type': "application/json; charset=UTF-8"
+        },
+      );
 
-      http.StreamedResponse res = await request.send();
-
-      if (res.statusCode == 201) {
-        // Handle success
-        showSnackBar(
-            context, 'Account created login with the same credentials');
-      } else {
-        // Handle error
-        showSnackBar(
-            context, 'Failed to create account' + res.statusCode.toString());
-      }
+      httpErrorHandling(
+        response: res,
+        context: context,
+        onSuccess: () async {
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (context) => const MainScreen(),
+              ),
+              (route) => false);
+        },
+      );
     } catch (e) {
       showSnackBar(context, e.toString());
     }
@@ -75,7 +71,7 @@ class AuthService {
 
           userProvider.setUser(jsonDecode(res.body)); // Pass decoded JSON map
 
-          await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
+          await prefs.setString('token', jsonDecode(res.body)['token']);
 
           navigator.pushAndRemoveUntil(
               MaterialPageRoute(
@@ -94,44 +90,51 @@ class AuthService {
     try {
       var userProvider = Provider.of<UserProvider>(context, listen: false);
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      String? token = prefs.getString('x-auth-token');
+      String? token = prefs.getString('token');
       if (token == null) {
-        prefs.setString('x-auth-token', '');
+        prefs.setString('token', '');
       }
-      var tokenRes = await http.post(
+      var tokenRes = await http.get(
         Uri.parse('${Constants.uri}/tokenIsValid'),
         headers: <String, String>{
           'Content-Type': "application/json; charset=UTF-8",
-          'x-auth-token': token!
+          'Authorization': "Bearer $token"
         },
       );
-      var response = jsonDecode(tokenRes.body);
-      if (response == true) {
-        http.Response userRes = await http.get(
-          Uri.parse('${Constants.uri}/'),
-          headers: <String, String>{
-            'Content-Type': "application/json; charset=UTF-8",
-            'x-auth-token': token
-          },
-        );
-        userProvider.setUser(jsonDecode(userRes.body));
-        //print(object)// Pass decoded JSON map
+
+      var body = jsonDecode(tokenRes.body);
+      print(body); // Debug print the entire body
+
+      var response = body["valid"];
+      print(response);
+
+      if (response == true && body["user"] != null) {
+        // Check if response is true and user is not null
+        prefs.setString('token', token!);
+
+        var userMap = body as Map<String, dynamic>;
+        print("User Data: $userMap"); // Debug print the user data
+
+        userProvider.setUser(userMap); // Pass the user data map
+      } else {
+        print("User data is null or response is not true.");
       }
     } catch (e) {
-      showSnackBar(context, e.toString());
+      print(e.toString());
+      //showSnackBar(context, e.toString());
     }
   }
 
   void signOut(BuildContext context) async {
-    final navigator = Navigator.of(context);
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('x-auth-token', '');
-    navigator.pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => const SignupScreen(),
-        ),
-        (route) => false);
+    await prefs.setString('token', '');
+
+    Navigator.of(context).popUntil((route) => route.isFirst);
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const SignupScreen()),
+    );
   }
+
 
   void forgotPassword(
       {required BuildContext context, required String email}) async {
@@ -273,18 +276,15 @@ class AuthService {
         print(responseBody);
 
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        try {
-          userProvider.setUser(responseBody); // Assuming setUser expects a Map<String, dynamic>
-        } catch (error) {
-          print('Exception setting user provider: $error');
-          // Optionally show an error message to the user
-        }
+
+        userProvider.setUser(responseBody); // Pass decoded JSON map
+
+        await prefs.setString('token', responseBody['token']);
         // Store the token securely
         await prefs.setString('x-auth-token', responseBody['token']);
 
-        // Navigate to the HomeScreen
         Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => MainScreen()),
+          MaterialPageRoute(builder: (context) => const MainScreen()),
           (route) => false,
         );
       } else {
@@ -293,7 +293,6 @@ class AuthService {
     } else {
       print(
           'Error sending Google Sign-In data to backend: ${response.statusCode}');
-      // Optionally show an error message to the user
     }
   }
 }

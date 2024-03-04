@@ -17,22 +17,22 @@ class JobDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Job Details'),
+        title: const Text('Job Details'),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
               navigateToEditScreen(context);
             },
           ),
           IconButton(
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             onPressed: () {
               showDeleteConfirmationDialog(context);
             },
           ),
         ],
-        backgroundColor: Color(0xFFed6843),
+        backgroundColor: const Color(0xFFed6843),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -45,10 +45,9 @@ class JobDetailsScreen extends StatelessWidget {
             buildDetailItem('Location', job.location),
             buildDetailItem('Employment Type', job.employmentType),
             buildDetailItem('Salary and Compensation', job.salaryCompensation),
-            buildDetailItem(
-              'Skills and Qualifications',
-              job.skillsQualifications,
-            ),
+            const SizedBox(height: 10),
+            const Text("Requirements:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            ...job.requirements.map((requirement) => Text("• $requirement")).toList(),
           ],
         ),
       ),
@@ -63,8 +62,8 @@ class JobDetailsScreen extends StatelessWidget {
           // Add your apply logic here
           // This can be a pop-up dialog, a form, or any other action
         },
-        child: Icon(Icons.how_to_reg),
-        backgroundColor: Color(0xFFed6843),
+        child: const Icon(Icons.how_to_reg),
+        backgroundColor: const Color(0xFFed6843),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
@@ -76,18 +75,18 @@ class JobDetailsScreen extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 18,
             color: Color(0xFFed6843),
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           value,
-          style: TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }
@@ -97,14 +96,14 @@ class JobDetailsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Job'),
-          content: Text('Are you sure you want to delete this job?'),
+          title: const Text('Delete Job'),
+          content: const Text('Are you sure you want to delete this job?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () async {
@@ -113,11 +112,11 @@ class JobDetailsScreen extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MainScreen(),
+                    builder: (context) => const MainScreen(),
                   ),
                 ); // Close the JobDetailsScreen
               },
-              child: Text(
+              child: const Text(
                 'Delete',
                 style: TextStyle(color: Colors.red),
               ),

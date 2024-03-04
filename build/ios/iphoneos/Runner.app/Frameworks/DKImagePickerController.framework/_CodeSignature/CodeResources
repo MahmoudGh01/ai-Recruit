@@ -6,7 +6,7 @@
 	<dict>
 		<key>DKImagePickerController.bundle/Assets.car</key>
 		<data>
-		VRONEQ9k1nDxK3+jSm4AYgCznuw=
+		v/rgsTdSA65O8kc3hWt2r22wB78=
 		</data>
 		<key>DKImagePickerController.bundle/Base.lproj/DKImagePickerController.strings</key>
 		<dict>
@@ -19,7 +19,7 @@
 		</dict>
 		<key>DKImagePickerController.bundle/Info.plist</key>
 		<data>
-		u0ujenbY1IjO2tulc8ZCnSOjSMI=
+		CChMpfQR6hb26xJItd4UAV0ylMs=
 		</data>
 		<key>DKImagePickerController.bundle/ar.lproj/DKImagePickerController.strings</key>
 		<dict>
@@ -194,28 +194,20 @@
 		</dict>
 		<key>Info.plist</key>
 		<data>
-		clgvFsBxlh74tokY0zAhegf40Ls=
+		ZZ9eZsZ8FuSvL6R8EpCVrXZo3lE=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>DKImagePickerController.bundle/Assets.car</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VRONEQ9k1nDxK3+jSm4AYgCznuw=
-			</data>
 			<key>hash2</key>
 			<data>
-			fwJOog1XemszwnlHy1lKlnfupUBVzM4zuSO1sLCIL5k=
+			LAy4LWHlrrPcLvBQTXONZKzMIu4KjCVy1Lp9x81Ytog=
 			</data>
 		</dict>
 		<key>DKImagePickerController.bundle/Base.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4xGD8Rwvi93HvaqnO7+vDZWDMBM=
-			</data>
 			<key>hash2</key>
 			<data>
 			ELjMRLCkLklsKSO6rFYxrtU1AXPGCM/jJcf6s27mQfE=
@@ -225,21 +217,13 @@
 		</dict>
 		<key>DKImagePickerController.bundle/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			u0ujenbY1IjO2tulc8ZCnSOjSMI=
-			</data>
 			<key>hash2</key>
 			<data>
-			7MH4IWCQ8bYM89Tnojoq+kgYupzcQD29JmE2bAMjBgs=
+			88C4i7du9DviZoUnRcNpT893fowkD8Ikp6y5dWFgRbk=
 			</data>
 		</dict>
 		<key>DKImagePickerController.bundle/ar.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hmgKVe/ELj2gURZGT+GZDwZaP7Q=
-			</data>
 			<key>hash2</key>
 			<data>
 			8EBEfhbg9Wp48uZkSBXh83/CjuaZbY0Pl5MP0h7k198=
@@ -249,10 +233,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/da.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			D/EoHjvTwHAWEzVuC2G6vBsJnu4=
-			</data>
 			<key>hash2</key>
 			<data>
 			Se5q7h7rJFaZACyuxQHvVnbMpZuFEPY2ghUK5n4o08I=
@@ -262,10 +242,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/de.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			aBIMF8wyDvY06aV2Bd4D1ivcRU4=
-			</data>
 			<key>hash2</key>
 			<data>
 			H7oPc9FDMsyBTv1ge4zzQ9mwsX0FoBuLZ9b7IesFuOM=
@@ -275,10 +251,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/en.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9Q/DfMw3bDYmzyQL9Dp2TQkyUvM=
-			</data>
 			<key>hash2</key>
 			<data>
 			wRktIAnVAnqy13yInBFBAY0DrBHpEtI9oKtzLeXD3RI=
@@ -288,10 +260,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/es.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NevVA8t5NN7C0rKXChImH4O3YfE=
-			</data>
 			<key>hash2</key>
 			<data>
 			TYau/PSO1F3K80YkOSGGsuUdKr+GbcbO0xkmsoVguEE=
@@ -301,10 +269,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/fr.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6cJMOe8JrYF03L3W9F79fIYPtE8=
-			</data>
 			<key>hash2</key>
 			<data>
 			XeqMTtiKSK1J6ujdx7yhXp7BWuvKJYI+RQnYiYny4D8=
@@ -314,10 +278,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/hu.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0eCEwKbFu38BHkg5r6N8402dkXs=
-			</data>
 			<key>hash2</key>
 			<data>
 			koXD1oSMQ6BAgGJmcCgH62mWYajI2uBMC9WX+USGCWU=
@@ -327,10 +287,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/it.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			TAlKCVsmH6cihPALHZhnFoQs5LE=
-			</data>
 			<key>hash2</key>
 			<data>
 			nhSK2bw/+PLGTtW27tPjkOk71T+MncfskpqPwK2lhZI=
@@ -340,10 +296,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/ja.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PIZnwQ5EdXn9Sde2m08gpbjHacs=
-			</data>
 			<key>hash2</key>
 			<data>
 			KeL0orI52PODaxhrV4RvgbgC4Q6krDkO/sprxqlRPfU=
@@ -353,10 +305,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/ko.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			kJxeSwpa45LW72gQKW/iC9Jn4zU=
-			</data>
 			<key>hash2</key>
 			<data>
 			FCrA4Gc0Mj90bRXELikqH38ISm+VZn/fTFdAWqFNWgw=
@@ -366,10 +314,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/nb-NO.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			GT/zie43E+HBEWl2kTAJRkDdE9s=
-			</data>
 			<key>hash2</key>
 			<data>
 			djVG/NpWtRWjSA3G1iIg53ggesmLPWxj3L7oc2E6h8M=
@@ -379,10 +323,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/nl.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			lAVKBUVMnJkxVl9jrus2i2k1oIk=
-			</data>
 			<key>hash2</key>
 			<data>
 			wObmt9BBd0IFYimw+uGyKGjKEALrJsjZa+4YtbpoR5g=
@@ -392,10 +332,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/pt_BR.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			tUPVite8WGcESkhEVtVsN+8aEx8=
-			</data>
 			<key>hash2</key>
 			<data>
 			n6iu95SLuBRFRQbd6crMWsW4I6N5HJDoNF0YNzoYpBw=
@@ -405,10 +341,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/ru.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0rIAuu7v039vnJh99/NkEhlYpXI=
-			</data>
 			<key>hash2</key>
 			<data>
 			M12gTcd21LAS83vmg70IxBhMrkr9SUy+lMNgqQqgJn0=
@@ -418,10 +350,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/tr.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			558fSIGiBHUJCg2iZQvHWlivw1Q=
-			</data>
 			<key>hash2</key>
 			<data>
 			CuIDAgluqD/JKtE9pTTvnu9rGSot//IS3XV5HYlNKFU=
@@ -431,10 +359,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/ur.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6EYiiFsDKyAlJwepmIqOnx80kwA=
-			</data>
 			<key>hash2</key>
 			<data>
 			OX1UoR/0JwgfTkhVAuVLC8rm8pkso6MssB+Tb+Kemxg=
@@ -444,10 +368,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/vi.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			001MdN+6p4Wj2GxyuQi9jI2OymI=
-			</data>
 			<key>hash2</key>
 			<data>
 			N5fi2LsY43ka7PJFMBqTc+GjU5z417xGXSmegrxxUJc=
@@ -457,10 +377,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/zh-Hans.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Qfv+Sv1HN+PP6w3kSD8UxfCs8m8=
-			</data>
 			<key>hash2</key>
 			<data>
 			gW58yg4AYSSFypzzxa1sQ8teATRYb34fi4Jrfwasbuo=
@@ -470,10 +386,6 @@
 		</dict>
 		<key>DKImagePickerController.bundle/zh-Hant.lproj/DKImagePickerController.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xDMDoCCnErpChkw3aU6nZGMhrMw=
-			</data>
 			<key>hash2</key>
 			<data>
 			VoNMNcj3ugOpQ10JjxUvPX5MoSBLftKJdiq9sJ1ijsA=
