@@ -60,7 +60,7 @@ class _JobListScreenState extends State<JobListScreen> {
             ),
             SizedBox(width: 10),
             Text(
-              'My Profile',
+              'Find your Job',
               style: TextStyle(
                   fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
             ),
@@ -139,16 +139,7 @@ class _JobListScreenState extends State<JobListScreen> {
 
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => CreateJobScreen()),
-          );
-        },
-        backgroundColor: Color(0xFFed6843),
-        child: Icon(Icons.add),
-      ),
+
     );
   }
 

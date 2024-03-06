@@ -11,6 +11,7 @@ class User {
   String title;
   String birthdate;
   String role;
+  List<String> skills;
 
   User({
     required this.id,
@@ -23,10 +24,16 @@ class User {
     this.title = "",
     this.birthdate = "",
     this.role = "User",
+    this.skills = const[""],
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
     Map<String, dynamic> userJson = json['user'] ?? {};
+    // Ensure 'skills' is a list and cast it to List<String>, provide a default list if necessary
+    List<String> skillsList = [];
+    if (userJson['skills'] != null) {
+      skillsList = List.from(userJson['skills']).map((skill) => skill.toString()).toList();
+    }
     return User(
       id: userJson['_id'] ?? '',
       email: userJson['email'] ?? '',
@@ -38,6 +45,7 @@ class User {
       role: userJson['role'] ?? "User",
       profilePicturePath: userJson['profile_picture'] ?? "",
       token: json['token'] ?? '',
+      skills: skillsList,
     );
   }
 

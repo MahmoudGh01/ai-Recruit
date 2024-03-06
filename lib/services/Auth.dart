@@ -129,10 +129,12 @@ class AuthService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('token', '');
 
-    Navigator.of(context).popUntil((route) => route.isFirst);
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const SignupScreen()),
+    Navigator.of(context).pushAndRemoveUntil(
+
+      MaterialPageRoute(builder: (context) => SignupScreen()),
+          (Route<dynamic> route) => false, // Remove all routes below
     );
+
   }
 
 

@@ -1,22 +1,19 @@
-import 'dart:io';
-
+import 'package:airecruit/models/job_model.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:airecruit/utils/custom_textfield.dart';
 import 'package:airecruit/utils/globalColors.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
 import 'package:airecruit/models/JobApplication.dart';
-import 'package:airecruit/models/JobApplicationData.dart';
 import 'package:dropbox_client/dropbox_client.dart';
 import 'package:airecruit/services/jobApplicationsController.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '../../models/Jobs.dart';
-
 class ApplicationForm extends StatefulWidget {
+  final JobModel job; // Add jobId as a final variable
+
+  // Modify constructor to accept jobId
+  ApplicationForm(this.job, {Key? key}) : super(key: key);
+
   @override
   _ApplicationFormState createState() => _ApplicationFormState();
 }
@@ -40,36 +37,22 @@ class _ApplicationFormState extends State<ApplicationForm> {
   void initState() {
     super.initState();
 
-
     _controller = JobApplicationController(
         firstNameController: TextEditingController(),
         lastNameController: TextEditingController(),
         emailController: TextEditingController(),
         cvFilePath: cvFilePath,
         motivationalLetter: motivationalLetter);
-   
-    _controller.applyForJob((fitScore) {
+
+    _controller.applyForJob(context,widget.job,(fitScore) {
+      print("Form :${widget.job}");
       setState(() {
         this.fitScore = fitScore;
       });
     });
   }
 
-  
-
-
-  Future<void> uploadFileFromGoogleDrive(String fileId) async {
-    try {
-      // Authenticate with Google Drive
-
-      // File uploaded successfully
-      print('File uploaded from Google Drive successfully!');
-    } catch (e) {
-      // Handle any errors that occur during the upload process
-      print('Error uploading file from Google Drive: $e');
-    }
-  }
-Future<void> requestStoragePermission() async {
+  Future<void> requestStoragePermission() async {
     // Request storage permission
     var status = await Permission.storage.request();
     if (status.isGranted) {
@@ -90,11 +73,11 @@ Future<void> requestStoragePermission() async {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('File Picking Error'),
-            content: Text('An error occurred while picking the file.'),
+            title: const Text('File Picking Error'),
+            content: const Text('An error occurred while picking the file.'),
             actions: <Widget>[
               TextButton(
-                child: Text('OK'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -108,11 +91,11 @@ Future<void> requestStoragePermission() async {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text('Permission Denied'),
-          content: Text('Storage permission is required to pick a file.'),
+          title: const Text('Permission Denied'),
+          content: const Text('Storage permission is required to pick a file.'),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -123,28 +106,12 @@ Future<void> requestStoragePermission() async {
     }
   }
 
-  
-
-
-
   Future<void> listFolder(String path) async {
     if (await _controller.checkAuthorized(true)) {
       final result = await Dropbox.listFolder(path);
       setState(() {});
     }
   }
-
-  
-
-
-Job job = Job(
-    description:
-        'We are looking for an experienced Senior Software Engineer to join our team.',
-    jobTitle: 'Senior Software Engineer',
-    location: 'Tunis',
-    requirements: ['Python', 'Flask', 'MongoDB'],
-  );
-
 
   @override
   Widget build(BuildContext context) {
@@ -157,30 +124,28 @@ Job job = Job(
               width: 40,
               height: 40,
             ),
-            SizedBox(width: 10),
-            Text(
+            const SizedBox(width: 10),
+            const Text(
               'My Job Applications',
               style: TextStyle(
                   fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
             ),
-          
           ],
         ),
       ),
       body: Column(
         children: [
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           Text(
             fitScore != null
                 ? 'Fit Score: ${fitScore!.toStringAsFixed(2)}%'
                 : 'Fit Score: N/A',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18, color: GlobalColors.secondaryColor,
               fontWeight:
                   FontWeight.bold, // Add this line to make the text bold
             ),
           ),
-
           Expanded(
             child: Row(
               children: [
@@ -199,7 +164,7 @@ Job job = Job(
                     },
                     steps: [
                       Step(
-                        title: Text(
+                        title: const Text(
                           'Personal Information',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -221,7 +186,7 @@ Job job = Job(
                                     ? 'This field is required'
                                     : null,
                               ),
-                              SizedBox(height: 16.0),
+                              const SizedBox(height: 16.0),
                               CustomTextField(
                                 controller: _lastNameController,
                                 hintText: 'Last Name',
@@ -231,7 +196,7 @@ Job job = Job(
                                     ? 'This field is required'
                                     : null,
                               ),
-                              SizedBox(height: 16.0),
+                              const SizedBox(height: 16.0),
                               CustomTextField(
                                 controller: _emailController,
                                 hintText: 'Email',
@@ -249,13 +214,13 @@ Job job = Job(
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 16.0),
+                              const SizedBox(height: 16.0),
                             ],
                           ),
                         ),
                       ),
                       Step(
-                        title: Text(
+                        title: const Text(
                           'Upload Your CV',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -312,14 +277,13 @@ Job job = Job(
                                   print('File picking error: $e');
                                 }
                               },
-
-                              child: Text('Choose CV File'),
+                              child: const Text('Choose CV File'),
                             ),
                             if (cvFilePath != null)
                               Row(
                                 children: [
-                                  Icon(Icons.file_present),
-                                  SizedBox(width: 8),
+                                  const Icon(Icons.file_present),
+                                  const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
                                       'Selected CV: $cvFilePath',
@@ -332,7 +296,7 @@ Job job = Job(
                         ),
                       ),
                       Step(
-                        title: Text(
+                        title: const Text(
                           'Cover Letter',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -344,13 +308,14 @@ Job job = Job(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             FutureBuilder<String>(
-                              future: _controller.generateCoverLetter(job),
+                              future:
+                                  _controller.generateCoverLetter(widget.job),
                               builder: (context, snapshot) {
                                 if (snapshot.connectionState ==
                                     ConnectionState.waiting) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
+                                  return const Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 8.0),
                                     child: Center(
                                         child: CircularProgressIndicator(
                                       color: GlobalColors.secondaryColor,
@@ -364,7 +329,7 @@ Job job = Job(
                                 }
                               },
                             ),
-                            SizedBox(height: 16.0),
+                            const SizedBox(height: 16.0),
                             ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor:
@@ -380,7 +345,7 @@ Job job = Job(
                                   _controller.saveAsPDF(
                                       motivationalLetter!, context);
                                   _jobApplication = JobApplication(
-                                    jobId: '123', // Change to actual job ID
+                                    jobId: widget.job.id, // Change to actual job ID
                                     userId: '456', // Change to actual user ID
                                     coverLetter: motivationalLetter!,
                                     cvFileName: cvFilePath!,
@@ -391,12 +356,12 @@ Job job = Job(
                                   showDialog(
                                     context: context,
                                     builder: (context) => AlertDialog(
-                                      title: Text('Error'),
-                                      content: Text(
+                                      title: const Text('Error'),
+                                      content: const Text(
                                           'Please Upload a Cover letter  file first.'),
                                       actions: <Widget>[
                                         TextButton(
-                                          child: Text('OK'),
+                                          child: const Text('OK'),
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
@@ -406,13 +371,13 @@ Job job = Job(
                                   );
                                 }
                               },
-                              child: Text('Confirm and Save as PDF'),
+                              child: const Text('Confirm and Save as PDF'),
                             ),
                           ],
                         ),
                       ),
                       Step(
-                        title: Text(
+                        title: const Text(
                           'Last Step before submission',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
@@ -450,17 +415,17 @@ Job job = Job(
                                     motivationalLetter: motivationalLetter,
                                   );
 
-                                  await _controller.postulate(context);
+                                  await _controller.postulate(widget.job,context);
                                 } else {
                                   showDialog(
                                     context: context,
                                     builder: (context) => AlertDialog(
-                                      title: Text('Error'),
-                                      content: Text(
+                                      title: const Text('Error'),
+                                      content: const Text(
                                           'Please upload a cover letter and choose a CV file.'),
                                       actions: <Widget>[
                                         TextButton(
-                                          child: Text('OK'),
+                                          child: const Text('OK'),
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
@@ -470,7 +435,7 @@ Job job = Job(
                                   );
                                 }
                               },
-                              child: Text('Confirm'),
+                              child: const Text('Confirm'),
                             ),
                           ],
                         ),
@@ -485,9 +450,6 @@ Job job = Job(
       ),
     );
   }
-
-
-  
 
   @override
   void dispose() {

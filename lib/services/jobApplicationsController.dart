@@ -1,28 +1,28 @@
 import 'dart:convert';
+import 'package:airecruit/models/job_model.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'dart:io'; // Import File class
-import 'package:provider/provider.dart';
-import 'package:flutter/foundation.dart'; // Import this package for ChangeNotifier
-import 'package:pdf/pdf.dart';
+// Import this package for ChangeNotifier
 import 'package:pdf/widgets.dart' as pw;
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
-import '../models/Jobs.dart';
+
+import '../providers/userprovider.dart';
 import '../utils/constants.dart';
 
 class JobApplicationController {
 //Job score
   String? dropboxClientId;
   String? dropboxSecret;
-  int _currentStep = 0;
   String? cvFilePath;
   String? motivationalLetter;
   double? _fitScore;
   TextEditingController firstNameController;
   TextEditingController lastNameController;
   TextEditingController emailController;
+
 
   JobApplicationController({
     required this.firstNameController,
@@ -37,10 +37,11 @@ class JobApplicationController {
     _fitScore = score;
   }
 
-  void applyForJob(Function(double fitScore) onSuccess) async {
-    String userID = "1";
-    String jobID = "65de532dd803fa124a9305f1";
-    List<String> userSkills = ["Python", "node", "MongoDB"];
+  void applyForJob(BuildContext context,JobModel job,Function(double fitScore) onSuccess) async {
+    var user = Provider.of<UserProvider>(context, listen: false).user;
+    String userID = user.id;
+    String jobID = job.id;
+    List<String> userSkills = user.skills;
 
     // Create a Map to represent the request data
     Map<String, dynamic> requestData = {
@@ -110,7 +111,7 @@ class JobApplicationController {
     // pdf.save().then((_) => output.close());
   }
 
-  Future<void> postulate(BuildContext context) async {
+  Future<void> postulate(JobModel job,BuildContext context) async {
     try {
       if (cvFilePath == null) {
         print('CV file path is null. Cannot submit application.');
@@ -126,7 +127,7 @@ class JobApplicationController {
       request.fields['lastName'] = lastNameController.text;
       request.fields['email'] = emailController.text;
       request.fields['coverLetter'] = motivationalLetter ?? '';
-      request.fields['job_id'] = '65db5ddb9d13bc846f0d474e'; // Add the job ID
+      request.fields['job_id'] = job.id; // Add the job ID
 
       var cvFile = File(cvFilePath!);
       var cvStream = http.ByteStream(cvFile.openRead());
@@ -171,10 +172,10 @@ class JobApplicationController {
     }
   }
 
-  Future<String> generateCoverLetter(Job job) async {
+  Future<String> generateCoverLetter(JobModel job) async {
     try {
       final String prompt =
-          "Write a professional  cover letter for the position of Senior Software Engineer at edreams  you will play a crucial role in  '${job.description}'  this cover letter will apply this user Farah torkhani for that position (a cover letter as a user )";
+          "Write a professional  cover letter for the position of Senior Software Engineer at edreams  you will play a crucial role in  '${job.jobDescription}'  this cover letter will apply this user Farah torkhani for that position (a cover letter as a user )";
       final String openaiApiKey =
           "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";
 

@@ -50,13 +50,9 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).user;
+    var user = Provider.of<UserProvider>(context, listen: false).user;
 
-    List<Map<String, dynamic>> skills = [
-      {'name': 'PHP', 'percentage': 86.0},
-      {'name': 'Java', 'percentage': 48.0},
-      // Add more skills as needed
-    ];
+    List<String> skills = user.skills;
     List<Map<String, dynamic>> socialLinks = [
       {
         'name': 'LinkedIn',

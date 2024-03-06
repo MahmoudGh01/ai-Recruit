@@ -105,6 +105,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               ),
               const SizedBox(height: 20),
               TextFormField(
+
                 decoration: InputDecoration(
                   labelText: user.email,
                   prefixIcon: const Icon(LineAwesomeIcons.envelope),

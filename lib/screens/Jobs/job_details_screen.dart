@@ -1,5 +1,6 @@
 import 'package:airecruit/models/job_model.dart';
 import 'package:airecruit/screens/JobApplication/ApplicationForm.dart';
+import 'package:airecruit/utils/globalColors.dart';
 import 'package:flutter/material.dart';
 import 'package:airecruit/services/job_service.dart';
 
@@ -17,79 +18,91 @@ class JobDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Job Details'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.edit),
-            onPressed: () {
-              navigateToEditScreen(context);
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.delete),
-            onPressed: () {
-              showDeleteConfirmationDialog(context);
-            },
-          ),
-        ],
-        backgroundColor: const Color(0xFFed6843),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: Row(
           children: [
-            buildDetailItem('Job Title', job.jobTitle),
-            buildDetailItem('Job Description', job.jobDescription),
-            buildDetailItem('Company Information', job.companyInformation),
-            buildDetailItem('Location', job.location),
-            buildDetailItem('Employment Type', job.employmentType),
-            buildDetailItem('Salary and Compensation', job.salaryCompensation),
-            const SizedBox(height: 10),
-            const Text("Requirements:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            ...job.requirements.map((requirement) => Text("• $requirement")).toList(),
+            Image.asset(
+              'Assets/logo.png',
+              width: 40,
+              height: 40,
+            ),
+            SizedBox(width: 10),
+            Text(
+              'Find your Job',
+              style: TextStyle(
+                  fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
+            ),
+
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ApplicationForm(),
-            ),
-          );
-          // Add your apply logic here
-          // This can be a pop-up dialog, a form, or any other action
-        },
-        child: const Icon(Icons.how_to_reg),
-        backgroundColor: const Color(0xFFed6843),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              // Job Title and Company
+              Card(
+                surfaceTintColor: Colors.white,
+                elevation: 4,
+                child: ListTile(
+                  leading: Icon(Icons.work, color: GlobalColors.secondaryColor),
+                  title: Text(job.jobTitle, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  subtitle: Text(job.companyInformation),
+                ),
+              ),
+
+              // Job Details Section
+              Card(
+                surfaceTintColor: Colors.white,
+                elevation: 4,
+                margin: EdgeInsets.symmetric(vertical: 10),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DetailSection(title: "Description", content: job.jobDescription),
+                      DetailSection(title: "Location", content: job.location),
+                      DetailSection(title: "Employment Type", content: job.employmentType),
+                      DetailSection(title: "Salary", content: job.salaryCompensation),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Requirements List
+              Text("Requirements", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: GlobalColors.secondaryColor)),
+              ...job.requirements.map((requirement) => ListTile(
+                leading: Icon(Icons.check_circle_outline, color: GlobalColors.secondaryColor),
+                title: Text(requirement),
+              )).toList(),
+            ],
+          ),
+        ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ApplicationForm(job))),
+        label: Text('Apply Now',style: TextStyle(color: Colors.white),),
+        icon: Icon(Icons.send,color: Colors.white,),
+        backgroundColor: GlobalColors.buttonColor,
+      ),
     );
   }
 
-  Widget buildDetailItem(String label, String value) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Color(0xFFed6843),
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          value,
-          style: const TextStyle(fontSize: 16),
-        ),
-        const SizedBox(height: 16),
-      ],
+  Widget DetailSection({required String title, required String content}) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: GlobalColors.primaryColor)),
+          SizedBox(height: 4),
+          Text(content, style: TextStyle(fontSize: 14)),
+        ],
+      ),
     );
   }
+
 
   Future<void> showDeleteConfirmationDialog(BuildContext context) async {
     return showDialog<void>(

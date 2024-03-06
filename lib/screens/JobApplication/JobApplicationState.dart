@@ -40,8 +40,8 @@ class _JobApplicationsScreenState extends State<JobApplicationsScreen> {
 
   Future<void> fetchJobApplications() async {
     try {
-      final response = await http
-          .get(Uri.parse('${Constants.uri}/job-applications'));
+      final response =
+          await http.get(Uri.parse('${Constants.uri}/job-applications'));
       if (response.statusCode == 200) {
         final List<dynamic> applications =
             json.decode(response.body) as List<dynamic>;
@@ -66,7 +66,7 @@ class _JobApplicationsScreenState extends State<JobApplicationsScreen> {
   Future<Map<String, dynamic>> fetchJobDetails(String jobID) async {
     try {
       final response =
-          await http.get(Uri.parse('${Constants.uri}/jobss/$jobID'));
+          await http.get(Uri.parse('${Constants.uri}/jobs/$jobID'));
       if (response.statusCode == 200) {
         final Map<String, dynamic> jobDetails =
             json.decode(response.body) as Map<String, dynamic>;
@@ -100,7 +100,6 @@ class _JobApplicationsScreenState extends State<JobApplicationsScreen> {
               style: TextStyle(
                   fontSize: 20, fontFamily: AutofillHints.creditCardNumber),
             ),
-
           ],
         ),
       ),
@@ -255,7 +254,6 @@ class _JobApplicationsScreenState extends State<JobApplicationsScreen> {
       ),
     );
   }
-
 
   Widget _buildJobApplicationTile(Map<String, dynamic> application) {
     final firstName = application['firstName'];

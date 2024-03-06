@@ -31,10 +31,11 @@ class JobModel {
       employmentType: json['employment_type'],
       salaryCompensation: json['salary_compensation'],
       requirements: json['requirements'] != null
-          ? List<String>.from(json['requirements'].map((req) => req['name']))
+          ? List<String>.from(json['requirements'])
           : [],
     );
   }
+
 
 
   Map<String, dynamic> toJson() {

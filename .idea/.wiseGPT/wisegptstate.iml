@@ -55,6 +55,10 @@
         <option value="$PROJECT_DIR$/lib/screens/Jobs/widgets/cardJobDescription_widget.dart" />
         <option value="$PROJECT_DIR$/lib/utils/globalColors.dart" />
         <option value="$PROJECT_DIR$/lib/providers/userprovider.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/add_skill_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/widgets/resume_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/screens/JobSeeker/Profile/widgets/skill_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/models/user.dart" />
       </list>
     </option>
   </component>

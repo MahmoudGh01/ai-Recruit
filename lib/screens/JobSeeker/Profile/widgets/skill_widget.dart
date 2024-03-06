@@ -8,7 +8,7 @@ import '../add_skill_screen.dart';
 class SkillsSectionWidget extends StatelessWidget {
   final String title;
   final IconData icon;
-  final List<Map<String, dynamic>> skills; // Updated to accept a list of Maps
+  final List<String> skills; // Updated to accept a list of Maps
 
   const SkillsSectionWidget({
     Key? key,
@@ -49,27 +49,33 @@ class SkillsSectionWidget extends StatelessWidget {
         ],
         trailing: IconButton(
           icon: Icon(Icons.add),
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return Dialog(
-                  child: AddSkillPage(),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                );
-              },
-            );
-          },
+          onPressed: () => showAddSkillModal(context, ['Flutter', 'Dart', 'Firebase', 'REST API']),
         ),
       ),
     );
   }
+
+  void showAddSkillModal(BuildContext context, List<String> predefinedSkills) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          color: Colors.white,
+          padding: EdgeInsets.all(16),
+          child: Wrap(
+            children: <Widget>[
+              AddSkillPage(predefinedSkills: predefinedSkills),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
 }
 
 class SkillCard extends StatelessWidget {
-  final Map<String, dynamic> skill;
+  final String skill;
 
   const SkillCard({Key? key, required this.skill}) : super(key: key);
 
@@ -96,23 +102,12 @@ class SkillCard extends StatelessWidget {
             .min, // Makes the column height just enough for its children
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircularProgressIndicator(
-            value: skill['percentage'] / 100,
-            backgroundColor: Colors.grey.shade300,
-            valueColor:
-                AlwaysStoppedAnimation(_getProgressColor(skill['percentage'])),
-            strokeWidth: 5,
-          ),
-          SizedBox(height: 8),
+
           Text(
-            '${skill['percentage']}%',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          Text(
-            skill['name'],
+            skill,
             textAlign: TextAlign
                 .center, // Ensure text is centered if it wraps to a new line
-            style: TextStyle(color: Colors.black54),
+            style: TextStyle(fontSize: 16 ,color: Colors.black),
           ),
         ],
       ),
